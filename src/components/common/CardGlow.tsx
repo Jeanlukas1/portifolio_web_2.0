@@ -1,7 +1,6 @@
 /**
  * Brilho que acompanha o cursor dentro de um card.
  * Uso: o card precisa de `relative isolate group` (isolate: o brilho fica entre o fundo e o conteúdo) e `onPointerMove={trackGlow}` (de `@/lib/cardGlow`); coloque <CardGlow /> como filho.
- * Efeito disparado pelo usuário (hover), por isso fica ativo mesmo com prefers-reduced-motion.
  */
 export function CardGlow() {
   return (

@@ -33,7 +33,7 @@ Frames extraídos com ffmpeg (1 fps, mosaicos 3×3) dos dois vídeos. O vídeo c
 - **Indicador de scroll:** cápsula (mouse) com um ponto descendo em loop, centralizada no fim do hero.
 - **Header:** fixo, fundo escuro, borda inferior. Linha de progresso de scroll (gradiente azul-petróleo → transparente) cresce da esquerda sobre a borda. O pill ativo da nav muda conforme a seção visível (mudança suave). No mock o item ativo inicial é "Tecnologias", um bug do mock: usaremos a seção real visível.
 - **Reveal das seções:** fade + leve deslocamento vertical ao entrar na viewport.
-- **Fundo:** manchas radiais muito sutis que mudam de posição entre os frames. Parece um spotlight que segue o cursor (baixa intensidade). Implementar como spotlight suave e desligado em touch e com reduced-motion.
+- **Fundo:** manchas radiais muito sutis que mudam de posição entre os frames. Parece um spotlight que segue o cursor (baixa intensidade). Implementado como feixe com rastro que segue o cursor (parado em touch); roda mesmo com reduced-motion (ver `decisoes.md`).
 - **Cards (serviços, tecnologias):** no hover, fundo um pouco mais claro e borda mais visível (sem mudança de tamanho perceptível).
 - **Marquee:** rolagem contínua e lenta da direita para a esquerda, fade nas bordas.
 - **Dialog de tecnologia:** modal pequeno (~450 px) centralizado, overlay escuro. Ícone grande + nome + categoria mono, descrição longa (2-4 linhas), botão X no canto. O título da seção diz "clique para ver detalhes".

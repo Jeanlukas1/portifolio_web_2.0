@@ -19,7 +19,7 @@ const buttonVariants = cva(
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
         // Variantes do modelo Base44 (botões em pill)
-        // Hover: sobe 2px, brilho/realce e ícone cresce; clique "afunda". Ativo mesmo com reduced-motion (efeito curto, disparado pelo usuário).
+        // Hover: sobe 2px, brilho/realce e ícone cresce; clique "afunda".
         pill: "rounded-full bg-foreground text-background duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_10px_30px_-8px_rgb(255_255_255/0.45)] active:translate-y-0 active:scale-[0.98] [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:scale-115",
         "pill-outline":
           "rounded-full border-white/12 bg-transparent text-foreground duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/[0.07] hover:shadow-[0_10px_30px_-10px_rgb(94_234_212/0.35)] active:translate-y-0 active:scale-[0.98] [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:scale-115",

@@ -2,8 +2,7 @@ import { useEffect, useRef } from 'react'
 
 /**
  * Feixe de luz de fundo que acompanha o cursor (visto no vídeo do modelo).
- * Segue o mouse com atraso suave (rastro). Com prefers-reduced-motion acompanha sem atraso,
- * pois é um efeito disparado pelo próprio usuário. Em telas de toque fica oculto.
+ * Segue o mouse com atraso suave (rastro), para todos os visitantes. Em telas de toque fica parado.
  */
 export function Spotlight() {
   const ref = useRef<HTMLDivElement>(null)
@@ -11,8 +10,7 @@ export function Spotlight() {
   useEffect(() => {
     const el = ref.current
     if (!el || !window.matchMedia('(pointer: fine)').matches) return
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const ease = reduceMotion ? 1 : 0.12
+    const ease = 0.12
 
     const target = { x: window.innerWidth * 0.2, y: window.innerHeight * 0.25 }
     const pos = { ...target }

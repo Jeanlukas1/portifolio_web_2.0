@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import profilePhoto from '@/assets/images/profile.webp'
 import { profile } from '@/data/profile'
 import { orbitTechIds, techById } from '@/data/technologies'
@@ -26,20 +26,19 @@ const CYCLE_MS = 2600
 const FIRST_DELAY_MS = 2200
 
 export function TechOrbit() {
-  const reduceMotion = useReducedMotion()
   const techs = orbitTechIds.map((id) => techById.get(id)).filter((t) => t !== undefined)
   const [active, setActive] = useState<number | null>(null)
   const [paused, setPaused] = useState(false)
 
-  // Alterna o chip ativo sozinho; pausa no hover. Sem ciclo com reduced-motion.
+  // Alterna o chip ativo sozinho; pausa no hover.
   useEffect(() => {
-    if (paused || reduceMotion) return
+    if (paused) return
     const timer = setTimeout(
       () => setActive((i) => (i === null ? 0 : (i + 1) % techs.length)),
       active === null ? FIRST_DELAY_MS : CYCLE_MS,
     )
     return () => clearTimeout(timer)
-  }, [active, paused, reduceMotion, techs.length])
+  }, [active, paused, techs.length])
 
   const activeTech = active !== null ? techs[active] : null
 
@@ -60,7 +59,7 @@ export function TechOrbit() {
         <motion.div
           aria-hidden="true"
           className="absolute inset-0 rounded-full border border-dashed border-white/10"
-          animate={reduceMotion ? undefined : { rotate: 360 }}
+          animate={{ rotate: 360 }}
           transition={{ duration: 60, ease: 'linear', repeat: Infinity }}
         >
           <span className="absolute top-0 left-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80" />
@@ -69,7 +68,7 @@ export function TechOrbit() {
         <motion.div
           aria-hidden="true"
           className="absolute inset-[16%] rounded-full border border-white/10"
-          animate={reduceMotion ? undefined : { rotate: -360 }}
+          animate={{ rotate: -360 }}
           transition={{ duration: 40, ease: 'linear', repeat: Infinity }}
         >
           <span className="absolute top-0 left-1/2 size-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/80" />

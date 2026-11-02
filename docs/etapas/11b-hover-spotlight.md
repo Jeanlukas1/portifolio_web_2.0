@@ -20,5 +20,8 @@ Pedido do usuário: faltavam as animações de hover dos botões e dos cards de 
 - Build, `tsc` e oxlint ok.
 - Playwright **com `reducedMotion: 'reduce'`** (como na máquina do usuário): botão sobe 2 px com sombra; spotlight na posição do cursor; card de projeto sobe 6 px com brilho e ↗ visíveis; card de tecnologia sobe 4 px; console sem erros.
 
-## Pendências
-- Perguntar ao usuário se marquee, giro do orbit, reveal e digitação também devem rodar com reduced-motion (ver `estado.md`).
+## Atualização: animações para todos
+O usuário decidiu que **todas** as animações rodam independentemente de `prefers-reduced-motion`.
+- `src/App.tsx`: `MotionConfig reducedMotion="never"`.
+- `useReducedMotion` removido de `Hero` (fade/parallax), `TechOrbit` (giro dos anéis e ciclo dos chips), `ScrollCue` e `useTypewriter`; `motion-reduce:animate-none` removido do marquee e do cursor piscando; `Spotlight` sempre com rastro; `index.css` sem o bloco que desligava a rolagem suave.
+- Verificação (Playwright com `reducedMotion: 'reduce'`): digitação, anéis (WAAPI, sentidos opostos), ciclo dos chips, marquee, indicador de rolagem, reveal (opacidade 0 → 1, y 24 → 0) e fade do hero animando; console limpo. Build, `tsc` e oxlint ok.

@@ -6,7 +6,7 @@
 | Build | `npm run build` (tsc -b + vite build), `npm run lint` (oxlint) | 0 erros, 0 warnings |
 | Console | dev e `vite preview` | sem erros/warnings; sem 404 de assets |
 | Fidelidade visual | screenshots a 1920×1080, seção a seção, lado a lado com as referências (`referencia-visual.md`) | espaçamento, tipografia, cores, raios e estados equivalentes |
-| Animações | comparar com as observações do vídeo; emular `prefers-reduced-motion` no DevTools | movimento fiel; com reduced-motion, sem animações contínuas |
+| Animações | comparar com as observações do vídeo; testar também com `prefers-reduced-motion: reduce` emulado (Playwright `reducedMotion: 'reduce'`) | movimento fiel; **todas as animações rodam mesmo com reduced-motion** (decisão do usuário) |
 | Responsividade | 360, 390, 768, 1024, 1280, 1440, 1920 px | sem scroll horizontal; menu, grids e orbit adaptados |
 | Funcionalidades | roteiro manual da tabela "Funcionalidades" do `estado.md`, inclusive teclado (Tab, Esc em modais e menu) | todas funcionando |
 | Dados | revisar `src/data` contra `conteudo.md`; grep no `dist/` por termos do mock (São Paulo, Orbit Pay, GeoLink, Pulse Monitor, AWS, Next.js, Supabase, Firebase, "3 anos", "um dia útil") | 0 ocorrências |

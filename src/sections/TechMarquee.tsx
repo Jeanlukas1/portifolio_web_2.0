@@ -29,7 +29,7 @@ export function TechMarquee() {
       style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
     >
       <p className="sr-only">Tecnologias: {names.join(', ')}</p>
-      <div className="flex w-max animate-[marquee_45s_linear_infinite] motion-reduce:animate-none">
+      <div className="flex w-max animate-[marquee_45s_linear_infinite]">
         <Track hidden />
         <Track hidden />
       </div>

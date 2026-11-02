@@ -14,7 +14,7 @@ export function TypingLine({ phrases }: { phrases: string[] }) {
       <span aria-hidden="true">{text}</span>
       <span
         aria-hidden="true"
-        className="ml-0.5 inline-block h-[1.1em] w-[2px] animate-[blink_1s_steps(1)_infinite] bg-foreground motion-reduce:animate-none"
+        className="ml-0.5 inline-block h-[1.1em] w-[2px] animate-[blink_1s_steps(1)_infinite] bg-foreground"
       />
     </p>
   )

@@ -126,11 +126,6 @@
         background: rgb(255 255 255 / 0.9);
         color: #0e0e0e;
     }
-    @media (prefers-reduced-motion: reduce) {
-        html {
-            scroll-behavior: auto;
-        }
-    }
 }
 
 /* Cursor piscando da linha de digitação do hero */

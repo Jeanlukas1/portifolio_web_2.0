@@ -17,7 +17,7 @@ Scripts: `npm run dev` · `build` (`tsc -b && vite build`) · `lint` · `preview
 | React + Vite + TypeScript ✅ | base, alias `@/` → `src` (vite.config + tsconfig) | template oficial `react-ts` |
 | Tailwind CSS v4 ✅ | estilos; tokens via `@theme` em `src/index.css` | plugin `@tailwindcss/vite`, sem `tailwind.config`; importa `tw-animate-css` e `shadcn/tailwind.css` |
 | shadcn/ui ✅ | `button`, `badge`, `dialog`, `sheet`, `sonner` instalados (+ `tooltip` se preciso) | `cn()` vem do pacote `cn` (oficial do shadcn, substitui clsx + tailwind-merge); `sonner` com tema fixo dark, sem next-themes |
-| motion (Framer Motion) | reveal, pill da nav (`layoutId`), orbit, `useScroll`, `AnimatePresence` | `MotionConfig reducedMotion="user"` |
+| motion (Framer Motion) | reveal, pill da nav (`layoutId`), orbit, `useScroll`, `AnimatePresence` | `MotionConfig reducedMotion="never"` (animações para todos) |
 | lucide-react | ícones de UI | logos de marca são SVGs locais em `src/assets/icons/`; a versão 1.x não tem GitHub/LinkedIn (usar SVG inline) |
 | jsPDF | currículo | `import()` dinâmico no clique |
 | Fontes ✅ self-hosted | Inter (`@fontsource-variable/inter`) + JetBrains Mono (`@fontsource/jetbrains-mono`, latin 400/500), importadas em `main.tsx`; `--font-sans`/`--font-mono` no CSS | 🔶 escolha inferida do vídeo; Google Fonts removido (bloqueava a renderização) |
@@ -47,7 +47,7 @@ public/favicon.png    ✅
 - `Project.tech` aceita ids de `technologies.ts` ou rótulos livres.
 - Componentes em PascalCase; hooks `useX`; nomes de arquivos de assets sem espaços.
 - **Estilo:** cores sempre por token (`bg-card`, `text-muted-foreground`, `text-subtle`, `border-border`), nunca hex solto, exceto ajustes de hover. Utilities próprias: `container-page`, `text-eyebrow`, `card-surface`. Botões do modelo: `<Button variant="pill"|"pill-outline"|"icon-circle" size="cta"|"nav">`. Tags: `<Badge variant="mono"|"pill">`.
-- **Animação:** usar `Reveal` / as variants de `lib/motion.ts`; o `App` fica envolto em `MotionConfig reducedMotion="user"`.
+- **Animação:** usar `Reveal` / as variants de `lib/motion.ts`; o `App` fica envolto em `MotionConfig reducedMotion="never"`. **Não** usar `useReducedMotion` nem `motion-reduce:` (decisão do usuário: animações para todos).
 - **Seções:** envolver em `<Section id=...>` (borda superior de largura total + container + padding vertical padrão); grids com `min-w-0` nas colunas para evitar overflow.
 - **Âncoras:** hero `#topo`; seções `#sobre #servicos #tecnologias #projetos #contato` (ids de `data/navigation.ts`). Conteúdo em `main#conteudo` (alvo do skip-link), acima do Spotlight (`z-10`).
 

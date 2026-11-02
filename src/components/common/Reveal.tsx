@@ -8,7 +8,6 @@ type RevealProps = HTMLMotionProps<'div'> & {
 
 /**
  * Faz o conteúdo entrar com fade + subida ao aparecer na tela (uma vez).
- * Com prefers-reduced-motion, o MotionConfig do App desliga o deslocamento.
  */
 export function Reveal({ delay = 0, children, ...props }: RevealProps) {
   return (

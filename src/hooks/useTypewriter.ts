@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useReducedMotion } from 'motion/react'
 
 type Options = {
   typeMs?: number
@@ -11,17 +10,15 @@ type Options = {
 
 /**
  * Efeito de digitação em ciclo (mesmos tempos do main.js antigo).
- * Com prefers-reduced-motion, retorna a primeira frase completa e não anima.
  */
 export function useTypewriter(
   phrases: string[],
   { typeMs = 90, deleteMs = 45, holdMs = 1800, gapMs = 350, startDelayMs = 900 }: Options = {},
 ) {
-  const reduceMotion = useReducedMotion()
   const [text, setText] = useState('')
 
   useEffect(() => {
-    if (reduceMotion || phrases.length === 0) return
+    if (phrases.length === 0) return
 
     let phrase = 0
     let letter = 0
@@ -47,7 +44,7 @@ export function useTypewriter(
 
     timer = setTimeout(tick, startDelayMs)
     return () => clearTimeout(timer)
-  }, [phrases, reduceMotion, typeMs, deleteMs, holdMs, gapMs, startDelayMs])
+  }, [phrases, typeMs, deleteMs, holdMs, gapMs, startDelayMs])
 
-  return reduceMotion ? (phrases[0] ?? '') : text
+  return text
 }

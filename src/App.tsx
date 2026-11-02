@@ -17,8 +17,9 @@ import { Technologies } from '@/sections/technologies/Technologies'
 function App() {
   const resume = useResume()
 
+  // Animações para todos os visitantes, mesmo com prefers-reduced-motion (decisão do usuário, docs/decisoes.md).
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion="never">
       <a
         href="#conteudo"
         className="fixed top-3 left-4 z-[60] -translate-y-20 rounded-lg bg-foreground px-4 py-2 text-sm text-background transition-transform focus:translate-y-0"

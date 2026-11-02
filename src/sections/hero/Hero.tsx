@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { ArrowDownRight, Download } from 'lucide-react'
 import { SocialIcons } from '@/components/common/SocialIcons'
 import { Button } from '@/components/ui/button'
@@ -16,7 +16,6 @@ type HeroProps = {
 
 export function Hero({ onDownloadCv }: HeroProps) {
   const ref = useRef<HTMLElement>(null)
-  const reduceMotion = useReducedMotion()
   // Ao rolar, o conteúdo do hero sobe e esmaece (vídeo do modelo).
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0])
@@ -25,7 +24,7 @@ export function Hero({ onDownloadCv }: HeroProps) {
   return (
     <section ref={ref} id="topo" className="relative flex min-h-svh items-center overflow-hidden pt-24 pb-24 lg:pt-16">
       <motion.div
-        style={reduceMotion ? undefined : { opacity, y }}
+        style={{ opacity, y }}
         className="mx-auto grid w-full max-w-[85rem] items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-8"
       >
         <motion.div variants={stagger(0.1, 0.1)} initial="hidden" animate="visible">
