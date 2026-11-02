@@ -139,3 +139,10 @@
         opacity: 0;
     }
 }
+
+/* Faixa de tecnologias: a trilha é duplicada, então -50% fecha o loop */
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}

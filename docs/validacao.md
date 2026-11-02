@@ -14,6 +14,12 @@
 | Assets | todos os assets copiados estão referenciados e carregam | nenhum órfão ou quebrado |
 | Desempenho | Lighthouse (mobile e desktop) | ≥ 90 em Performance, Acessibilidade e SEO; jsPDF fora do chunk inicial |
 
+## Ferramenta de screenshots (Playwright, fora do projeto)
+- `playwright-core` instalado no **scratchpad da sessão** (não é dependência do portfólio); usa o Edge instalado (`channel: 'msedge'`), sem baixar navegador. O scratchpad é temporário: em outra sessão, recriar com `npm i playwright-core@1` numa pasta do scratchpad.
+- Script `shot.mjs`: recebe url, prefixo de saída, largura, altura, `motion|reduced` e ids de seções; faz `scrollIntoView` em cada id, espera ~1,4 s, salva `<prefixo>-<id>.png` e imprime os erros/avisos do console.
+- Rodar contra `timeout 60 npx vite preview --port <p> --strictPort &` (build atual).
+- Também serve para: medir overflow (`document.documentElement.scrollWidth`), clicar (menu) e testar teclado (Esc).
+
 ## Riscos ativos e mitigação
 | Risco | Mitigação |
 |---|---|

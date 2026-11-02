@@ -28,8 +28,8 @@ src/
   main.tsx  App.tsx  index.css            ✅
   components/ui/        ✅ shadcn (não editar à mão além do estilo)
   components/layout/    ✅ Header, NavPill, MobileMenu, ScrollProgress, Footer, Spotlight
-  components/common/    SectionHeading ✅, Reveal ✅, BrandIcons ✅, SocialIcons ✅, TechIcon, Marquee
-  sections/             hero/ ✅ (Hero, TypingLine, TechOrbit, ScrollCue), About, Services, TechMarquee, technologies/, projects/, LinkedInCta, Contact
+  components/common/    Section ✅, SectionHeading ✅, Reveal ✅, BrandIcons ✅, SocialIcons ✅, TechIcon
+  sections/             hero/ ✅ (Hero, TypingLine, TechOrbit, ScrollCue), About ✅, Services ✅, TechMarquee ✅, technologies/, projects/, LinkedInCta, Contact
   data/                 ✅ profile, navigation, services, technologies, projects, education, experience (.ts)
   types/content.ts      ✅ tipos do conteúdo
   hooks/                useActiveSection ✅, useTypewriter ✅, useCopyToClipboard
@@ -47,6 +47,7 @@ public/favicon.png    ✅
 - Componentes em PascalCase; hooks `useX`; nomes de arquivos de assets sem espaços.
 - **Estilo:** cores sempre por token (`bg-card`, `text-muted-foreground`, `text-subtle`, `border-border`), nunca hex solto, exceto ajustes de hover. Utilities próprias: `container-page`, `text-eyebrow`, `card-surface`. Botões do modelo: `<Button variant="pill"|"pill-outline"|"icon-circle" size="cta"|"nav">`. Tags: `<Badge variant="mono"|"pill">`.
 - **Animação:** usar `Reveal` / as variants de `lib/motion.ts`; o `App` fica envolto em `MotionConfig reducedMotion="user"`.
+- **Seções:** envolver em `<Section id=...>` (borda superior de largura total + container + padding vertical padrão); grids com `min-w-0` nas colunas para evitar overflow.
 - **Âncoras:** hero `#topo`; seções `#sobre #servicos #tecnologias #projetos #contato` (ids de `data/navigation.ts`). Conteúdo em `main#conteudo` (alvo do skip-link), acima do Spotlight (`z-10`).
 
 ## Ambiente (máquina do usuário)

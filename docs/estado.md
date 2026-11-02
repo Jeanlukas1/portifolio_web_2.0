@@ -2,9 +2,9 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Etapas 0-5 concluídas e commitadas** (branch `master`, sem push). Layout e hero prontos; as demais seções ainda são placeholders com os títulos reais.
-- **Próxima ação:** Etapa 6 (Sobre + Serviços + Marquee).
-- **Validação manual pendente** (headless não cobre): nav ativa ao rolar, linha de progresso, menu mobile a 360-390 px, ciclo/hover/clique dos chips do orbit, fade do hero ao rolar.
+- **Etapas 0-6 concluídas e commitadas** (branch `master`, sem push). Layout, hero, Sobre, Serviços e marquee prontos; Tecnologias, Projetos e Contato ainda são placeholders.
+- **Próxima ação:** Etapa 7 (Tecnologias + dialog).
+- **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
 | # | Etapa | Status | Registro |
@@ -15,7 +15,7 @@ _Atualizado em: 2026-11-02_
 | 3 | Dados + assets (`src/data`, cópia de imagens/ícones) | ✅ concluída | [03-dados-assets](etapas/03-dados-assets.md) |
 | 4 | Layout (header, nav, progresso, menu mobile, footer) | ✅ concluída | [04-layout](etapas/04-layout.md) |
 | 5 | Hero (digitação, orbit) | ✅ concluída | [05-hero](etapas/05-hero.md) |
-| 6 | Sobre + Serviços + Marquee | ⬜ | — |
+| 6 | Sobre + Serviços + Marquee | ✅ concluída | [06-sobre-servicos-marquee](etapas/06-sobre-servicos-marquee.md) |
 | 7 | Tecnologias + dialog | ⬜ | — |
 | 8 | Projetos + filtro + dialog/galeria | ⬜ | — |
 | 9 | LinkedIn CTA + Contato | ⬜ | — |
@@ -27,13 +27,13 @@ _Atualizado em: 2026-11-02_
 Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [decisoes.md](decisoes.md) e [referencia-visual.md](referencia-visual.md).
 | Funcionalidade | Origem | Situação |
 |---|---|---|
-| Header fixo + nav com seção ativa + progresso de scroll | antigo + Base44 | ✅ implementado (validação manual pendente) |
-| Menu mobile acessível | antigo | ✅ implementado (validação manual pendente) |
-| Reveal ao rolar | antigo + Base44 | pendente |
+| Header fixo + nav com seção ativa + progresso de scroll | antigo + Base44 | ✅ validado |
+| Menu mobile acessível | antigo | ✅ validado (390 px, Esc) |
+| Reveal ao rolar | antigo + Base44 | ✅ implementado |
 | Digitação de cargos no hero | antigo + Base44 | ✅ implementado |
 | Orbit de tecnologias com legenda | Base44 | ✅ implementado (validação manual pendente) |
-| Serviços (conteúdo real) | Base44 | pendente (aguardando conteúdo) |
-| Marquee de tecnologias | Base44 | pendente |
+| Serviços (conteúdo real) | Base44 | ✅ implementado |
+| Marquee de tecnologias | Base44 | ✅ implementado |
 | Tecnologias + dialog de detalhes | Base44 | pendente |
 | Projetos + filtro em pills + dialog com galeria | antigo + Base44 | pendente |
 | Card LinkedIn | Base44 | pendente |
@@ -51,5 +51,5 @@ Nenhuma no momento. Todas as respostas estão registradas em `decisoes.md` e `co
 - **Repo antigo** tem 1 alteração não commitada em `index.html` (não mexer).
 - **CV antigo publicado** contém dados pessoais sensíveis (fica no repo antigo; decisão sobre removê-lo é do usuário).
 - **Bundle JS** 394 kB (motion): otimizar na Etapa 11.
-- **Screenshots de validação:** Edge headless (ver `etapas/02-design-system.md` → Verificação). Limites: largura mínima ~500 px, não aplica âncoras e **ativa reduced-motion por padrão** (usar `--force-prefers-no-reduced-motion` para ver animações).
+- **Screenshots de validação:** preferir o Playwright (ver `validacao.md`); alternativa: Edge headless (ver `etapas/02-design-system.md` → Verificação). Limites: largura mínima ~500 px, não aplica âncoras e **ativa reduced-motion por padrão** (usar `--force-prefers-no-reduced-motion` para ver animações).
 - Riscos de implementação: ver `validacao.md`.
