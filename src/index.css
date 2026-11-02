@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Tokens do modelo Base44 (ver docs/referencia-visual.md).
+ * O site tem só tema escuro: os valores ficam direto em :root.
+ * Os nomes seguem o padrão do shadcn para os componentes de src/components/ui funcionarem sem ajustes.
+ */
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-surface: var(--surface);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-subtle: var(--subtle);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-glow: var(--glow);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    color-scheme: dark;
+    --background: #0e0e0e;          /* fundo da página */
+    --surface: #121212;             /* faixas/áreas levemente destacadas */
+    --card: #151515;                /* cards */
+    --card-foreground: #fafafa;
+    --popover: #141414;             /* dialogs */
+    --popover-foreground: #fafafa;
+    --foreground: #fafafa;          /* texto principal */
+    --muted-foreground: #a3a3a3;    /* texto secundário */
+    --subtle: #6b6b6b;              /* eyebrows, legendas, rodapé */
+    --primary: #fafafa;
+    --primary-foreground: #0e0e0e;
+    --secondary: #1c1c1c;
+    --secondary-foreground: #fafafa;
+    --muted: #1c1c1c;
+    --accent: #1f1f1f;
+    --accent-foreground: #fafafa;
+    --glow: #2d5f6b;                /* azul-petróleo dos brilhos radiais */
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: rgb(255 255 255 / 0.08);
+    --input: rgb(255 255 255 / 0.12);
+    --ring: rgb(255 255 255 / 0.35);
+    --radius: 0.75rem;              /* cards: rounded-xl ≈ 16-17 px */
+}
+
+/* Container das seções: ~1216 px úteis no desktop, gutter de 16-24 px */
+@utility container-page {
+    width: 100%;
+    max-width: 79rem; /* 76rem de conteúdo + 1.5rem de padding de cada lado */
+    margin-inline: auto;
+    padding-inline: 1rem;
+    @media (width >= 40rem) {
+        padding-inline: 1.5rem;
+    }
+}
+
+/* Texto mono em caixa alta com tracking largo (eyebrows, chips, rodapé) */
+@utility text-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--subtle);
+}
+
+/* Superfície de card do modelo: fundo, borda sutil e hover mais claro */
+@utility card-surface {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) * 1.4);
+    transition: background-color 200ms, border-color 200ms;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    html {
+        @apply font-sans;
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+        -webkit-font-smoothing: antialiased;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-weight: 300;           /* corpo de texto leve, como no modelo */
+        letter-spacing: -0.01em;
+        overflow-x: hidden;
+    }
+    h1, h2, h3 {
+        letter-spacing: -0.035em;
+    }
+    button:not(:disabled), [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+    ::selection {
+        background: rgb(255 255 255 / 0.9);
+        color: #0e0e0e;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+}
