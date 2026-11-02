@@ -36,6 +36,10 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | oxlint no lugar de ESLint; TS 7; Vite 8 | ✅ template | Padrão atual do `create-vite`; não vale divergir |
 | 2026-11-02 | Pacote `cn` no lugar de clsx + tailwind-merge | ✅ shadcn | Gerado pelo preset oficial; mesma API `cn()` |
 | 2026-11-02 | Sem `next-themes` nem Geist | ✅ análise | Site só com tema escuro; fontes definidas são Inter + JetBrains Mono |
+| 2026-11-02 | Tecnologias: grade com as 20 de `technologies.ts` (sem filtro), 1/2/4 colunas; um único dialog controlado | ✅ análise | O modelo tem grade de 4 colunas e diz "clique para ver detalhes" |
+| 2026-11-02 | Grades longas: reveal **por card** (atraso pela coluna), não pela lista | ✅ teste | Com a lista inteira, 20% da grade nunca cabia na tela do mobile e os cards ficavam invisíveis |
+| 2026-11-02 | Dialogs controlados devolvem o foco ao botão que os abriu (`onCloseAutoFocus`) | ✅ teste | Sem `DialogTrigger`, o Radix não restaura o foco |
+| 2026-11-02 | Overlay dos dialogs mais escuro (`bg-black/70` + `blur-sm`); textos do shadcn em pt-BR ("Fechar") | ✅ análise | Modelo mostra overlay escuro; interface em pt-BR |
 
 ## Em aberto
 Lista única em [estado.md → Pendências](estado.md#pendências-aguardando-o-usuário).

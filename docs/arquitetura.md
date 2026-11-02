@@ -28,8 +28,8 @@ src/
   main.tsx  App.tsx  index.css            ✅
   components/ui/        ✅ shadcn (não editar à mão além do estilo)
   components/layout/    ✅ Header, NavPill, MobileMenu, ScrollProgress, Footer, Spotlight
-  components/common/    Section ✅, SectionHeading ✅, Reveal ✅, BrandIcons ✅, SocialIcons ✅, TechIcon
-  sections/             hero/ ✅ (Hero, TypingLine, TechOrbit, ScrollCue), About ✅, Services ✅, TechMarquee ✅, technologies/, projects/, LinkedInCta, Contact
+  components/common/    Section ✅, SectionHeading ✅, Reveal ✅, BrandIcons ✅, SocialIcons ✅, TechIcon ✅
+  sections/             hero/ ✅ (Hero, TypingLine, TechOrbit, ScrollCue), About ✅, Services ✅, TechMarquee ✅, technologies/ ✅ (Technologies, TechCard, TechDialog), projects/, LinkedInCta, Contact
   data/                 ✅ profile, navigation, services, technologies, projects, education, experience (.ts)
   types/content.ts      ✅ tipos do conteúdo
   hooks/                useActiveSection ✅, useTypewriter ✅, useCopyToClipboard

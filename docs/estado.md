@@ -2,8 +2,8 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Etapas 0-6 concluídas e commitadas** (branch `master`, sem push). Layout, hero, Sobre, Serviços e marquee prontos; Tecnologias, Projetos e Contato ainda são placeholders.
-- **Próxima ação:** Etapa 7 (Tecnologias + dialog).
+- **Etapas 0-7 concluídas e commitadas** (branch `master`, sem push). Layout, hero, Sobre, Serviços, marquee e Tecnologias prontos; Projetos e Contato ainda são placeholders.
+- **Próxima ação:** Etapa 8 (Projetos + filtro + dialog/galeria). Reaproveitar o padrão do `TechDialog` (dialog controlado + devolução de foco) e o reveal por card.
 - **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
@@ -16,7 +16,7 @@ _Atualizado em: 2026-11-02_
 | 4 | Layout (header, nav, progresso, menu mobile, footer) | ✅ concluída | [04-layout](etapas/04-layout.md) |
 | 5 | Hero (digitação, orbit) | ✅ concluída | [05-hero](etapas/05-hero.md) |
 | 6 | Sobre + Serviços + Marquee | ✅ concluída | [06-sobre-servicos-marquee](etapas/06-sobre-servicos-marquee.md) |
-| 7 | Tecnologias + dialog | ⬜ | — |
+| 7 | Tecnologias + dialog | ✅ concluída | [07-tecnologias](etapas/07-tecnologias.md) |
 | 8 | Projetos + filtro + dialog/galeria | ⬜ | — |
 | 9 | LinkedIn CTA + Contato | ⬜ | — |
 | 10 | Currículo PDF (jsPDF) | ⬜ | — |
@@ -34,7 +34,7 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 | Orbit de tecnologias com legenda | Base44 | ✅ implementado (validação manual pendente) |
 | Serviços (conteúdo real) | Base44 | ✅ implementado |
 | Marquee de tecnologias | Base44 | ✅ implementado |
-| Tecnologias + dialog de detalhes | Base44 | pendente |
+| Tecnologias + dialog de detalhes | Base44 | ✅ validado (1910/390 px, teclado, Esc, foco) |
 | Projetos + filtro em pills + dialog com galeria | antigo + Base44 | pendente |
 | Card LinkedIn | Base44 | pendente |
 | Contato (mailto + copiar e-mail com toast) | antigo + Base44 | pendente |
@@ -50,6 +50,6 @@ Nenhuma no momento. Todas as respostas estão registradas em `decisoes.md` e `co
 - **Foto de perfil** é uma selfie com fundo claro; o modelo usa uma foto escura. Tratamento só via CSS; o usuário pode trocar a foto depois.
 - **Repo antigo** tem 1 alteração não commitada em `index.html` (não mexer).
 - **CV antigo publicado** contém dados pessoais sensíveis (fica no repo antigo; decisão sobre removê-lo é do usuário).
-- **Bundle JS** 394 kB (motion): otimizar na Etapa 11.
+- **Bundle JS** 501 kB / gzip 166 kB (motion + radix): otimizar na Etapa 11.
 - **Screenshots de validação:** preferir o Playwright (ver `validacao.md`); alternativa: Edge headless (ver `etapas/02-design-system.md` → Verificação). Limites: largura mínima ~500 px, não aplica âncoras e **ativa reduced-motion por padrão** (usar `--force-prefers-no-reduced-motion` para ver animações).
 - Riscos de implementação: ver `validacao.md`.
