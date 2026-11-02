@@ -2,8 +2,8 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Etapas 0-11 concluídas e commitadas** (branch `master`, sem push). Site completo e polido: Lighthouse mobile 94/100/100/100, desktop 100/100/100/100.
-- **Próxima ação:** Etapa 12 (deploy na Vercel). Precisa do usuário: conta/login na Vercel, se o repo vai para o GitHub (push) e o domínio/URL final (para og:image, canonical e sitemap).
+- **Etapas 0-11 concluídas e commitadas** (branch `main`, enviada ao GitHub em 2026-11-02; repo **privado**). Site completo e polido: Lighthouse mobile 94/100/100/100, desktop 100/100/100/100.
+- **Próxima ação:** Etapa 12 (deploy na Vercel) **em andamento**: push ✅; falta o usuário fazer `npx vercel login` (CLI sem sessão); depois `vercel --prod`, ligar o repo ao projeto da Vercel e adicionar og:image/canonical/sitemap com a URL final.
 - **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
@@ -44,7 +44,8 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 ## Pendências (aguardando o usuário)
 - **Vídeos do modelo** sumiram de `Videos\Captures`; se o usuário quiser detalhes finos de hover, pedir de novo.
 - **Revisar o currículo PDF** (conteúdo e visual). O resumo do Portfólio 2.0 já foi trocado para "Meu portfólio reconstruído…".
-- **Etapa 12:** acesso à Vercel, push para o GitHub e domínio final.
+- **Etapa 12:** login da Vercel (`npx vercel login`) e domínio final (`*.vercel.app` ou próprio).
+- **Repo privado:** o card "Portfólio 2.0" aponta para `github.com/Jeanlukas1/portifolio_web_2.0`, que dá 404 para visitantes enquanto o repo for privado. Decidir: tornar público ou remover o link.
 
 ## Problemas conhecidos / riscos ativos
 - **Testar animações com reduced-motion:** o Windows do usuário está com animações desligadas; no Playwright usar `reducedMotion: 'reduce'` para ver o site como ele vê. O site ignora essa preferência de propósito (`decisoes.md`).
