@@ -2,8 +2,8 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Etapas 0-9 concluídas e commitadas** (branch `master`, sem push). Todas as seções da página estão prontas; não há mais placeholders.
-- **Próxima ação:** Etapa 10 (currículo PDF com jsPDF via `import()` dinâmico; ligar "Baixar CV" no hero e "Visualizar currículo" no Sobre, hoje desabilitados).
+- **Etapas 0-10 concluídas e commitadas** (branch `master`, sem push). Página completa + currículo PDF gerado no navegador.
+- **Próxima ação:** Etapa 11 (polimento: responsivo, a11y, performance/bundle, WebP, grep de mock, X fixo no dialog de projeto).
 - **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
@@ -19,7 +19,7 @@ _Atualizado em: 2026-11-02_
 | 7 | Tecnologias + dialog | ✅ concluída | [07-tecnologias](etapas/07-tecnologias.md) |
 | 8 | Projetos + filtro + dialog/galeria | ✅ concluída | [08-projetos](etapas/08-projetos.md) |
 | 9 | LinkedIn CTA + Contato | ✅ concluída | [09-linkedin-contato](etapas/09-linkedin-contato.md) |
-| 10 | Currículo PDF (jsPDF) | ⬜ | — |
+| 10 | Currículo PDF (jsPDF) | ✅ concluída | [10-curriculo-pdf](etapas/10-curriculo-pdf.md) |
 | 11 | Polimento (responsivo, a11y, perf, grep de mock) | ⬜ | — |
 | 12 | Deploy (Vercel) | ⬜ | — |
 
@@ -38,11 +38,11 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 | Projetos + filtro em pills + dialog com galeria | antigo + Base44 | ✅ validado (1910/390 px, filtro, galeria, Esc, X, foco) |
 | Card LinkedIn | Base44 | ✅ validado (1910/390 px) |
 | Contato (mailto + copiar e-mail com toast) | antigo + Base44 | ✅ validado (área de transferência, toast, ✓ por 2 s) |
-| Currículo PDF gerado (jsPDF) | antigo (PDF estático) → novo | pendente |
+| Currículo PDF gerado (jsPDF) | antigo (PDF estático) → novo | ✅ validado (download, nova aba, texto, privacidade) |
 | Ano dinâmico no rodapé, voltar ao topo, skip-link | antigo | ✅ implementado |
 
 ## Pendências (aguardando o usuário)
-Nenhuma no momento. Todas as respostas estão registradas em `decisoes.md` e `conteudo.md`.
+- **Revisar o currículo PDF** (conteúdo e visual). Detalhe: o resumo do projeto Portfólio 2.0 diz "Este site: …", o que fica estranho no PDF; ajustar o texto em `projects.ts` se o usuário quiser.
 
 ## Problemas conhecidos / riscos ativos
 - **Dev server:** testar com `timeout N npx vite ...` no Bash; não matar processos `node` genéricos.

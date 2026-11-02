@@ -3,6 +3,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { Spotlight } from '@/components/layout/Spotlight'
 import { Toaster } from '@/components/ui/sonner'
+import { useResume } from '@/hooks/useResume'
 import { About } from '@/sections/About'
 import { Contact } from '@/sections/Contact'
 import { Hero } from '@/sections/hero/Hero'
@@ -14,6 +15,8 @@ import { Technologies } from '@/sections/technologies/Technologies'
 
 /** Estrutura da página (ordem das seções do modelo Base44). */
 function App() {
+  const resume = useResume()
+
   return (
     <MotionConfig reducedMotion="user">
       <a
@@ -26,8 +29,8 @@ function App() {
       <Header />
 
       <main id="conteudo" className="relative z-10">
-        <Hero />
-        <About />
+        <Hero onDownloadCv={resume.download} />
+        <About onViewCv={resume.view} />
         <Services />
         <TechMarquee />
         <Technologies />

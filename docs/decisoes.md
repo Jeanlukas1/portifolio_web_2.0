@@ -16,7 +16,7 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | **Deploy na Vercel** | ✅ usuário | O usuário já usa a Vercel na Biblioteca |
 | 2026-11-02 | Ícones de marca como SVGs locais; lucide só para UI | ✅ análise | lucide não tem logos de marca; evita uma dependência |
 | 2026-11-02 | jsPDF por `import()` dinâmico | ✅ análise | Bundle inicial menor |
-| 2026-11-02 | "Visualizar currículo" abre o PDF em nova aba; "Baixar CV" baixa | 🔶 | Comportamento não aparece no vídeo |
+| 2026-11-02 | "Visualizar currículo" abre o PDF em nova aba; "Baixar CV" baixa | 🔶 implementado | Comportamento não aparece no vídeo |
 | 2026-11-02 | Fontes Inter + JetBrains Mono | 🔶 | Inferidas dos frames (zero com ponto) |
 | 2026-11-02 | Spotlight de fundo seguindo o cursor (sutil; off em touch e reduced-motion) | 🔶 | Manchas mudam de posição entre os frames |
 | 2026-11-02 | Chip do orbit alterna sozinho (~2-3 s); hover pausa; clique seleciona | ✅ vídeo (tempo ≈) | Observado nos frames + texto "passe o mouse para pausar" |
@@ -45,6 +45,9 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | Mini-card LinkedIn com destaques derivados de experiência/formação/idiomas (bullets do mock descartados) | ✅ análise | LinkedIn não é fonte; só dados confirmados |
 | 2026-11-02 | Seção `#linkedin` observada pela nav (`unlistedSectionIds`): nela nenhum item fica ativo | ✅ teste | Ao abrir a página direto nessa seção, "Sobre" ficava ativo por engano |
 | 2026-11-02 | Contato: e-mail visível em mono abaixo dos botões; falha ao copiar → toast de erro com o e-mail | ✅ análise | O e-mail fica acessível mesmo se o navegador bloquear a área de transferência |
+| 2026-11-02 | CV gerado dos mesmos dados do site: Resumo, **Experiência** (já pública no site), Formação, Projetos em destaque (4, com stack e link) + lista dos outros, Competências por categoria, Boas práticas, Idiomas | ✅ análise | Lista do usuário (dados públicos) + experiência confirmada depois |
+| 2026-11-02 | CV com Helvetica padrão do jsPDF (sem embutir fonte) | ✅ teste | Acentos, "–" e "·" verificados por extração de texto; PDF de 17 kB |
+| 2026-11-02 | "Visualizar": a aba é aberta no clique, antes do `import()`; aba bloqueada → baixa o PDF e avisa | ✅ análise | Safari bloqueia `window.open` depois de um `await` |
 | 2026-11-02 | Overlay dos dialogs mais escuro (`bg-black/70` + `blur-sm`); textos do shadcn em pt-BR ("Fechar") | ✅ análise | Modelo mostra overlay escuro; interface em pt-BR |
 
 ## Em aberto
