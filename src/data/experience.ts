@@ -5,7 +5,7 @@ export const experience: Experience[] = [
   {
     role: 'Desenvolvedor Full-Stack',
     organization: 'Prefeitura de Saquarema · Colégio Ismênia',
-    period: 'jun/2026 – ago/2026',
+    period: 'Trabalhando atualmente',
     description:
       'Desenvolvimento da Biblioteca Virtual, sistema de gerenciamento da biblioteca escolar: catálogo do acervo, empréstimos e devoluções com controle de atrasos, reservas, relatórios de uso e catalogação física por estante e prateleira.',
   },
