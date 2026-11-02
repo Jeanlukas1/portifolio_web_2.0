@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui/button'
-import { contactNavItem, navItems } from '@/data/navigation'
+import { contactNavItem, navItems, unlistedSectionIds } from '@/data/navigation'
 import { profile } from '@/data/profile'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { MobileMenu } from './MobileMenu'
 import { NavPill } from './NavPill'
 import { ScrollProgress } from './ScrollProgress'
 
-const sectionIds = [...navItems.map((i) => i.id), contactNavItem.id]
+const sectionIds = [...navItems.map((i) => i.id), ...unlistedSectionIds, contactNavItem.id]
 
 /** Header fixo: logo, nav em pill (desktop), CTA Contato e menu (celular). */
 export function Header() {

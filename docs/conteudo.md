@@ -53,6 +53,9 @@ Ano = ano de criação do repositório (`gh api repos/... --jq .created_at`, con
 
 Textos completos de cada projeto (descrição e destaques) estão em `../portifolio-web/index.html` e vão para `src/data/projects.ts` na Etapa 3.
 
+## Card LinkedIn (seção 05)
+Textos em `src/data/linkedin.ts`. Os 3 destaques do mini-card são **derivados** dos dados confirmados (experiência, 1º item de formação, inglês), não do LinkedIn: "Desenvolvedor Full-Stack na Prefeitura de Saquarema" · "Engenharia de Software · Universidade de Vassouras" · "Inglês B2 (Cambridge)". O título e o texto do card são textos de interface, sem afirmações factuais.
+
 ## Mock do Base44: descartar
 Foto do modelo · "São Paulo, Brasil" · "mais de 3 anos de experiência" · "React.js, Next.js e Node.js no dia a dia" · lista "Posso te ajudar" e Diferenciais · os 6 serviços (Web App, Mobile React Native + Expo, API & Backend Node.js, E-commerce Firebase/Google Maps, Landing Page, Manutenção) · "Respondo em até um dia útil" · AWS, Node.js, Next.js, Supabase, Firebase, Tailwind, Celery, Redis, Figma · projetos Orbit Pay, GeoLink API, Pulse Monitor (+ imagens e anos) · bullets do card LinkedIn "Recomendações / Projetos e publicações" (só se confirmados) · "© 2026 Jean Lukas · São Paulo".
 Na Etapa 11, um grep no build por esses termos deve retornar zero.

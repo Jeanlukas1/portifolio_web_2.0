@@ -29,10 +29,10 @@ src/
   components/ui/        ✅ shadcn (não editar à mão além do estilo)
   components/layout/    ✅ Header, NavPill, MobileMenu, ScrollProgress, Footer, Spotlight
   components/common/    Section ✅, SectionHeading ✅, Reveal ✅, BrandIcons ✅, SocialIcons ✅, TechIcon ✅
-  sections/             hero/ ✅ (Hero, TypingLine, TechOrbit, ScrollCue), About ✅, Services ✅, TechMarquee ✅, technologies/ ✅ (Technologies, TechCard, TechDialog), projects/ ✅ (Projects, ProjectFilter, ProjectCard, ProjectCover, ProjectDialog, ProjectGallery, techLabels), LinkedInCta, Contact
-  data/                 ✅ profile, navigation, services, technologies, projects, education, experience (.ts)
+  sections/             hero/ ✅ (Hero, TypingLine, TechOrbit, ScrollCue), About ✅, Services ✅, TechMarquee ✅, technologies/ ✅ (Technologies, TechCard, TechDialog), projects/ ✅ (Projects, ProjectFilter, ProjectCard, ProjectCover, ProjectDialog, ProjectGallery, techLabels), LinkedInCta ✅, Contact ✅
+  data/                 ✅ profile, navigation, services, technologies, projects, education, experience, linkedin (.ts)
   types/content.ts      ✅ tipos do conteúdo
-  hooks/                useActiveSection ✅, useTypewriter ✅, useCopyToClipboard
+  hooks/                useActiveSection ✅, useTypewriter ✅, useCopyToClipboard ✅
   lib/                  utils (cn) ✅, motion (variants) ✅, resume/generateResume
   assets/icons/ ✅ (20 SVGs Simple Icons, monocromáticos)  assets/images/profile.jpeg ✅  assets/images/projects/<slug>/ ✅
 public/favicon.png    ✅

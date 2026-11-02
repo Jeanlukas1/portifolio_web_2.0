@@ -2,8 +2,8 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Etapas 0-8 concluídas e commitadas** (branch `master`, sem push). Só falta a seção Contato (placeholder) e o card LinkedIn.
-- **Próxima ação:** Etapa 9 (LinkedIn CTA + Contato com mailto, copiar e-mail e toast).
+- **Etapas 0-9 concluídas e commitadas** (branch `master`, sem push). Todas as seções da página estão prontas; não há mais placeholders.
+- **Próxima ação:** Etapa 10 (currículo PDF com jsPDF via `import()` dinâmico; ligar "Baixar CV" no hero e "Visualizar currículo" no Sobre, hoje desabilitados).
 - **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
@@ -18,7 +18,7 @@ _Atualizado em: 2026-11-02_
 | 6 | Sobre + Serviços + Marquee | ✅ concluída | [06-sobre-servicos-marquee](etapas/06-sobre-servicos-marquee.md) |
 | 7 | Tecnologias + dialog | ✅ concluída | [07-tecnologias](etapas/07-tecnologias.md) |
 | 8 | Projetos + filtro + dialog/galeria | ✅ concluída | [08-projetos](etapas/08-projetos.md) |
-| 9 | LinkedIn CTA + Contato | ⬜ | — |
+| 9 | LinkedIn CTA + Contato | ✅ concluída | [09-linkedin-contato](etapas/09-linkedin-contato.md) |
 | 10 | Currículo PDF (jsPDF) | ⬜ | — |
 | 11 | Polimento (responsivo, a11y, perf, grep de mock) | ⬜ | — |
 | 12 | Deploy (Vercel) | ⬜ | — |
@@ -36,8 +36,8 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 | Marquee de tecnologias | Base44 | ✅ implementado |
 | Tecnologias + dialog de detalhes | Base44 | ✅ validado (1910/390 px, teclado, Esc, foco) |
 | Projetos + filtro em pills + dialog com galeria | antigo + Base44 | ✅ validado (1910/390 px, filtro, galeria, Esc, X, foco) |
-| Card LinkedIn | Base44 | pendente |
-| Contato (mailto + copiar e-mail com toast) | antigo + Base44 | pendente |
+| Card LinkedIn | Base44 | ✅ validado (1910/390 px) |
+| Contato (mailto + copiar e-mail com toast) | antigo + Base44 | ✅ validado (área de transferência, toast, ✓ por 2 s) |
 | Currículo PDF gerado (jsPDF) | antigo (PDF estático) → novo | pendente |
 | Ano dinâmico no rodapé, voltar ao topo, skip-link | antigo | ✅ implementado |
 
@@ -50,6 +50,6 @@ Nenhuma no momento. Todas as respostas estão registradas em `decisoes.md` e `co
 - **Foto de perfil** é uma selfie com fundo claro; o modelo usa uma foto escura. Tratamento só via CSS; o usuário pode trocar a foto depois.
 - **Repo antigo** tem 1 alteração não commitada em `index.html` (não mexer).
 - **CV antigo publicado** contém dados pessoais sensíveis (fica no repo antigo; decisão sobre removê-lo é do usuário).
-- **Bundle JS** 517 kB / gzip 170 kB (motion + radix): otimizar na Etapa 11.
+- **Bundle JS** 558 kB / gzip 182 kB (motion + radix + sonner): otimizar na Etapa 11.
 - **Screenshots de validação:** preferir o Playwright (ver `validacao.md`); alternativa: Edge headless (ver `etapas/02-design-system.md` → Verificação). Limites: largura mínima ~500 px, não aplica âncoras e **ativa reduced-motion por padrão** (usar `--force-prefers-no-reduced-motion` para ver animações).
 - Riscos de implementação: ver `validacao.md`.

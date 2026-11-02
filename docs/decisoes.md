@@ -20,7 +20,7 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | Fontes Inter + JetBrains Mono | 🔶 | Inferidas dos frames (zero com ponto) |
 | 2026-11-02 | Spotlight de fundo seguindo o cursor (sutil; off em touch e reduced-motion) | 🔶 | Manchas mudam de posição entre os frames |
 | 2026-11-02 | Chip do orbit alterna sozinho (~2-3 s); hover pausa; clique seleciona | ✅ vídeo (tempo ≈) | Observado nos frames + texto "passe o mouse para pausar" |
-| 2026-11-02 | Copiar e-mail → toast (sonner) + ícone ✓ | 🔶 | Feedback não aparece no vídeo |
+| 2026-11-02 | Copiar e-mail → toast (sonner) + ícone ✓ por 2 s | 🔶 implementado | Feedback não aparece no vídeo |
 | 2026-11-02 | Mobile: Sheet como menu; colunas empilhadas; orbit abaixo do texto | 🔶 | O vídeo não mostra mobile |
 | 2026-11-02 | Projetos sem print usam capa gerada (grade escura + brilho na cor da tech principal + ícones de até 3 techs) | 🔶 implementado | Mantém o visual sem inventar imagens; com 1 ícone só, as capas ficavam todas iguais (Python) |
 | 2026-11-02 | Documentação incremental em `docs/` (este sistema) | ✅ usuário | Economia de tokens entre sessões |
@@ -42,6 +42,9 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | Filtro de projetos: "Todos" (padrão) + categorias com projetos, cada pill com a contagem; anúncio `aria-live` do total | ✅ análise | Funcionalidade do site antigo no estilo da nav |
 | 2026-11-02 | Card de projeto: até 4 tags + "+N"; dialog mostra todas, galeria com miniaturas rotuladas e links "Ver online" / "Código no GitHub" | ✅ análise | Card limpo como no modelo; detalhes completos no dialog |
 | 2026-11-02 | Dialogs com conteúdo rolável usam `block` (não `grid`) no `DialogContent` | ✅ teste | No grid, a lista de miniaturas com overflow alargava a coluna e cortava o texto a 390 px |
+| 2026-11-02 | Mini-card LinkedIn com destaques derivados de experiência/formação/idiomas (bullets do mock descartados) | ✅ análise | LinkedIn não é fonte; só dados confirmados |
+| 2026-11-02 | Seção `#linkedin` observada pela nav (`unlistedSectionIds`): nela nenhum item fica ativo | ✅ teste | Ao abrir a página direto nessa seção, "Sobre" ficava ativo por engano |
+| 2026-11-02 | Contato: e-mail visível em mono abaixo dos botões; falha ao copiar → toast de erro com o e-mail | ✅ análise | O e-mail fica acessível mesmo se o navegador bloquear a área de transferência |
 | 2026-11-02 | Overlay dos dialogs mais escuro (`bg-black/70` + `blur-sm`); textos do shadcn em pt-BR ("Fechar") | ✅ análise | Modelo mostra overlay escuro; interface em pt-BR |
 
 ## Em aberto

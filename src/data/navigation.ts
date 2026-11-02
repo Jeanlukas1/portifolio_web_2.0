@@ -9,3 +9,6 @@ export const navItems: NavItem[] = [
 ]
 
 export const contactNavItem: NavItem = { id: 'contato', label: 'Contato' }
+
+/** Seções sem item na nav, observadas para que nenhum item fique ativo por engano nelas. */
+export const unlistedSectionIds = ['linkedin']

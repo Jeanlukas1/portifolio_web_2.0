@@ -1,27 +1,18 @@
 import { MotionConfig } from 'motion/react'
-import { SectionHeading } from '@/components/common/SectionHeading'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { Spotlight } from '@/components/layout/Spotlight'
+import { Toaster } from '@/components/ui/sonner'
 import { About } from '@/sections/About'
+import { Contact } from '@/sections/Contact'
 import { Hero } from '@/sections/hero/Hero'
+import { LinkedInCta } from '@/sections/LinkedInCta'
 import { Projects } from '@/sections/projects/Projects'
 import { Services } from '@/sections/Services'
 import { TechMarquee } from '@/sections/TechMarquee'
 import { Technologies } from '@/sections/technologies/Technologies'
 
-/*
- * Estrutura da página. As seções marcadas como PLACEHOLDER serão substituídas
- * pelos componentes de src/sections na Etapa 9 (docs/estado.md).
- */
-function SectionPlaceholder({ id, index, label, title }: { id: string; index: string; label: string; title: string }) {
-  return (
-    <section id={id} className="container-page flex min-h-[70vh] items-center border-t border-white/[0.06] py-24">
-      <SectionHeading index={index} label={label} title={title} />
-    </section>
-  )
-}
-
+/** Estrutura da página (ordem das seções do modelo Base44). */
 function App() {
   return (
     <MotionConfig reducedMotion="user">
@@ -41,13 +32,14 @@ function App() {
         <TechMarquee />
         <Technologies />
         <Projects />
-        {/* PLACEHOLDER: Etapa 9 */}
-        <SectionPlaceholder id="contato" index="06" label="Contato" title="Vamos criar juntos?" />
+        <LinkedInCta />
+        <Contact />
       </main>
 
       <div className="relative z-10">
         <Footer />
       </div>
+      <Toaster position="bottom-center" />
     </MotionConfig>
   )
 }
