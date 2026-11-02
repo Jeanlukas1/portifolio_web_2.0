@@ -14,6 +14,10 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | **Aprendizado vira bloco "Formação" dentro de Sobre** (e entra no CV) | ✅ usuário | Não existe no Base44; preserva o conteúdo |
 | 2026-11-02 | **CV só com dados públicos**: nome, cidade/UF, e-mail, GitHub, LinkedIn, formação, idiomas, competências, projetos | ✅ usuário | Privacidade |
 | 2026-11-02 | **Deploy na Vercel** | ✅ usuário | O usuário já usa a Vercel na Biblioteca |
+| 2026-11-02 | Branch `master` → `main` no primeiro push | ✅ análise | Padrão do repositório no GitHub |
+| 2026-11-02 | URL de produção `portifolioweb20.vercel.app` (nome gerado pela Vercel a partir da pasta) | 🔶 | Usuário não indicou domínio; pode trocar depois |
+| 2026-11-02 | Imagem de compartilhamento = captura real do hero (1200×630) | ✅ análise | Não inventa arte; mostra o site como é |
+| 2026-11-02 | Cache imutável para `/assets/*` via `vercel.json` | ✅ teste | A Vercel servia os assets com hash com `max-age=0` |
 | 2026-11-02 | Ícones de marca como SVGs locais; lucide só para UI | ✅ análise | lucide não tem logos de marca; evita uma dependência |
 | 2026-11-02 | jsPDF por `import()` dinâmico | ✅ análise | Bundle inicial menor |
 | 2026-11-02 | "Visualizar currículo" abre o PDF em nova aba; "Baixar CV" baixa | 🔶 implementado | Comportamento não aparece no vídeo |

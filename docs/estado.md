@@ -2,8 +2,8 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Etapas 0-11 concluídas e commitadas** (branch `main`, enviada ao GitHub em 2026-11-02; repo **privado**). Site completo e polido: Lighthouse mobile 94/100/100/100, desktop 100/100/100/100.
-- **Próxima ação:** Etapa 12 (deploy na Vercel) **em andamento**: push ✅; falta o usuário fazer `npx vercel login` (CLI sem sessão); depois `vercel --prod`, ligar o repo ao projeto da Vercel e adicionar og:image/canonical/sitemap com a URL final.
+- **Etapas 0-12 concluídas.** Site **no ar em https://portifolioweb20.vercel.app** (deploy pelo CLI). Código em `main` no GitHub (repo **privado**). Lighthouse em produção: mobile 91/100/100/100, desktop 100/100/100/100.
+- **Próxima ação:** aguardar o usuário: (1) liberar o repo para o app da Vercel no GitHub e rodar `npx vercel@latest git connect` (deploy automático a cada push); (2) decidir sobre o repo privado (link do card Portfólio 2.0); (3) revisar textos editados por ele (sugestões no histórico da conversa). Até o git connect, publicar com `npx vercel@latest --prod --yes`.
 - **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
@@ -21,7 +21,7 @@ _Atualizado em: 2026-11-02_
 | 9 | LinkedIn CTA + Contato | ✅ concluída | [09-linkedin-contato](etapas/09-linkedin-contato.md) |
 | 10 | Currículo PDF (jsPDF) | ✅ concluída | [10-curriculo-pdf](etapas/10-curriculo-pdf.md) |
 | 11 | Polimento (responsivo, a11y, perf, grep de mock) | ✅ concluída | [11-polimento](etapas/11-polimento.md) · [11b-hover-spotlight](etapas/11b-hover-spotlight.md) |
-| 12 | Deploy (Vercel) | ⬜ | — |
+| 12 | Deploy (Vercel) | ✅ concluída | [12-deploy](etapas/12-deploy.md) |
 
 ## Funcionalidades (alvo × situação)
 Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [decisoes.md](decisoes.md) e [referencia-visual.md](referencia-visual.md).
@@ -44,7 +44,8 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 ## Pendências (aguardando o usuário)
 - **Vídeos do modelo** sumiram de `Videos\Captures`; se o usuário quiser detalhes finos de hover, pedir de novo.
 - **Revisar o currículo PDF** (conteúdo e visual). O resumo do Portfólio 2.0 já foi trocado para "Meu portfólio reconstruído…".
-- **Etapa 12:** login da Vercel (`npx vercel login`) e domínio final (`*.vercel.app` ou próprio).
+- **Deploy automático:** o app da Vercel no GitHub não tem acesso ao repo privado (`vercel git connect` falhou). O usuário precisa liberar em GitHub → Settings → Applications → Vercel → Configure → adicionar `portifolio_web_2.0`.
+- **Domínio:** usando `portifolioweb20.vercel.app`. Se trocar, atualizar `index.html` (og:url, og:image, twitter:image, canonical), `public/robots.txt` e `public/sitemap.xml`.
 - **Repo privado:** o card "Portfólio 2.0" aponta para `github.com/Jeanlukas1/portifolio_web_2.0`, que dá 404 para visitantes enquanto o repo for privado. Decidir: tornar público ou remover o link.
 
 ## Problemas conhecidos / riscos ativos

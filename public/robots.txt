@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://portifolioweb20.vercel.app/sitemap.xml

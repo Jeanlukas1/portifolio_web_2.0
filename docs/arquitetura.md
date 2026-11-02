@@ -41,7 +41,8 @@ public/favicon.png    ✅
 ## Convenções
 - Conteúdo só em `src/data/`; seções recebem os dados e renderizam. Tecnologias são referenciadas por **id** (`technologies.ts`) em projetos, orbit e marquee.
 - Adicionar um projeto = 1 objeto em `projects.ts` + imagens em `assets/images/projects/<slug>/`, **em WebP**: `ffmpeg -i in.png -vf "scale='min(1600,iw)':-2" -c:v libwebp -quality 80 -compression_level 6 out.webp`.
-- `public/robots.txt` libera tudo; sitemap/canonical/og:image dependem do domínio (Etapa 12).
+- SEO: `public/robots.txt` (com `Sitemap:`), `public/sitemap.xml`, `public/og.png` (1200×630, captura do hero) e meta tags OG/Twitter/canonical no `index.html`, todos com a URL `https://portifolioweb20.vercel.app`.
+- `vercel.json`: `Cache-Control: public, max-age=31536000, immutable` para `/assets/*` (nomes com hash).
 - Campos opcionais (ano, links, imagens) ficam vazios quando não há dado real; a UI se adapta.
 - Ícones de marca: SVG monocromático + `color` em `technologies.ts`, aplicados via máscara CSS. Novo ícone = baixar do Simple Icons (mesmo formato) para `src/assets/icons/`.
 - `Project.tech` aceita ids de `technologies.ts` ou rótulos livres.
@@ -56,6 +57,6 @@ public/favicon.png    ✅
 - Node **v26.13.0**, npm **11.20.0** (winget `OpenJS.NodeJS.LTS`); ffmpeg **9.0.2** (winget `Gyan.FFmpeg`). Instalados em 2026-11-02.
 - Navegador do usuário: Opera GX (a extensão Claude in Chrome não está disponível).
 - Remote: `https://github.com/Jeanlukas1/portifolio_web_2.0.git` (privado), branch `main` (renomeada de `master` no primeiro push, 2026-11-02).
-- Vercel CLI via `npx vercel@latest` (sem instalação global).
+- Vercel CLI via `npx vercel@latest` (sem instalação global), logado na conta do usuário. Projeto `portifolioweb20` (`.vercel/` ignorado no git). Deploy: `npx vercel@latest --prod --yes` (envia a árvore local, inclusive alterações não commitadas).
 - Lint: `.oxlintrc.json` desliga `only-export-components` em `src/components/ui/**`.
 - Repo antigo: `../portifolio-web` (remote `Jeanlukas1/portifolio-web`, GitHub Pages).
