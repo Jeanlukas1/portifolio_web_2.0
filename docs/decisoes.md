@@ -18,7 +18,7 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | jsPDF por `import()` dinâmico | ✅ análise | Bundle inicial menor |
 | 2026-11-02 | "Visualizar currículo" abre o PDF em nova aba; "Baixar CV" baixa | 🔶 implementado | Comportamento não aparece no vídeo |
 | 2026-11-02 | Fontes Inter + JetBrains Mono | 🔶 | Inferidas dos frames (zero com ponto) |
-| 2026-11-02 | Spotlight de fundo seguindo o cursor (sutil; off em touch e reduced-motion) | 🔶 | Manchas mudam de posição entre os frames |
+| 2026-11-02 | Spotlight de fundo seguindo o cursor: feixe azul-petróleo 520 px + núcleo claro, com rastro (lerp 0,12); com reduced-motion segue sem atraso; em toque fica parado | ✅ usuário | Usuário pediu o "feixe de luz que acompanha o cursor"; a versão a 10% e desligada com reduced-motion não aparecia |
 | 2026-11-02 | Chip do orbit alterna sozinho (~2-3 s); hover pausa; clique seleciona | ✅ vídeo (tempo ≈) | Observado nos frames + texto "passe o mouse para pausar" |
 | 2026-11-02 | Copiar e-mail → toast (sonner) + ícone ✓ por 2 s | 🔶 implementado | Feedback não aparece no vídeo |
 | 2026-11-02 | Mobile: Sheet como menu; colunas empilhadas; orbit abaixo do texto | 🔶 | O vídeo não mostra mobile |
@@ -54,6 +54,8 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | X do dialog de projeto fixo (faixa `sticky` de altura 0) | ✅ teste | Antes sumia ao rolar o conteúdo |
 | 2026-11-02 | Resumo do Portfólio 2.0: "Meu portfólio reconstruído…" (sem "Este site:") | ✅ usuário | Ficava estranho no PDF |
 | 2026-11-02 | Mantidos: motion sem `LazyMotion` (~78 kB de JS não usado) e aviso de chunk > 500 kB | ✅ análise | Lighthouse já ≥ 94 no mobile; refatorar todos os componentes não compensa agora |
+| 2026-11-02 | **Hover sempre ativo, mesmo com reduced-motion** (botões sobem 2 px + brilho + ícone cresce; cards sobem 4-6 px + sombra + brilho interno que segue o cursor; ícone do card cresce; ↗ do projeto entra girando) | ✅ usuário | O Windows do usuário tem "Efeitos de animação" desligado → o navegador reporta reduced-motion e os hovers sumiam. Efeitos curtos e disparados pelo usuário não são o alvo dessa preferência |
+| 2026-11-02 | Animações contínuas/automáticas (marquee, giro do orbit, reveal, digitação) seguem respeitando reduced-motion | 🔶 aguardando o usuário | Ver pendência em `estado.md` |
 | 2026-11-02 | Overlay dos dialogs mais escuro (`bg-black/70` + `blur-sm`); textos do shadcn em pt-BR ("Fechar") | ✅ análise | Modelo mostra overlay escuro; interface em pt-BR |
 
 ## Em aberto

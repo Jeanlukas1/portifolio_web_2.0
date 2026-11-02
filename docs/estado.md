@@ -42,10 +42,13 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 | Ano dinâmico no rodapé, voltar ao topo, skip-link | antigo | ✅ implementado |
 
 ## Pendências (aguardando o usuário)
+- **Animações com "Efeitos de animação" do Windows desligado:** a máquina do usuário reporta `prefers-reduced-motion: reduce`. Hover e spotlight já funcionam assim; marquee, giro do orbit, reveal ao rolar e digitação ficam parados. Perguntar se devem rodar mesmo assim (afeta visitantes que pediram menos movimento).
+- **Vídeos do modelo** sumiram de `Videos\Captures`; se o usuário quiser detalhes finos de hover, pedir de novo.
 - **Revisar o currículo PDF** (conteúdo e visual). O resumo do Portfólio 2.0 já foi trocado para "Meu portfólio reconstruído…".
 - **Etapa 12:** acesso à Vercel, push para o GitHub e domínio final.
 
 ## Problemas conhecidos / riscos ativos
+- **Testar animações com reduced-motion:** o Windows do usuário está com animações desligadas; no Playwright usar `reducedMotion: 'reduce'` para ver o site como ele vê (script `hover.mjs` no scratchpad).
 - **Dev server:** testar com `timeout N npx vite ...` no Bash; não matar processos `node` genéricos.
 - **PATH do Windows:** Node e ffmpeg foram instalados agora; shells abertos antes não os enxergam. No PowerShell, recarregar com `$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')`. O Bash (Git Bash) pode precisar de um terminal novo.
 - **Foto de perfil** é uma selfie com fundo claro; o modelo usa uma foto escura. Tratamento só via CSS; o usuário pode trocar a foto depois.

@@ -2,7 +2,7 @@
 
 Arquivos de referência (fora do repo):
 - Screenshots: `C:\Users\lukas\OneDrive\Imagens\Screenshots\Captura de tela 2026-11-02 1425{11,24,33,41,49}.png`, `...142600.png`, `...142606.png`
-- Vídeos: `C:\Users\lukas\Videos\Captures\Nexus Portfolio _ Base44 - Opera 2026-11-02 14-22-41.mp4` (48 MB, principal) e `... 14-21-51.mp4` (4 MB)
+- Vídeos: `C:\Users\lukas\Videos\Captures\Nexus Portfolio _ Base44 - Opera 2026-11-02 14-22-41.mp4` (48 MB, principal) e `... 14-21-51.mp4` (4 MB). ⚠️ **Não estão mais nessa pasta** (verificado em 2026-11-02); restam só mosaicos de frames de baixa resolução num scratchpad temporário. Para detalhes finos de hover, pedir os vídeos de novo ao usuário.
 
 ## Tokens observados (screenshots, aproximados)
 - Fundo ~`#0e0e0e`; superfícies/cards ~`#151515`; bordas `white/8%`; texto branco, secundário cinza ~`#a3a3a3`, terciário ~`#6b6b6b` (no nosso CSS, `--subtle` = `#858585` para atingir contraste AA; ver `decisoes.md`).
