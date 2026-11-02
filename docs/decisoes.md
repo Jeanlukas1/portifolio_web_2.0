@@ -14,6 +14,7 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | **Aprendizado vira bloco "Formação" dentro de Sobre** (e entra no CV) | ✅ usuário | Não existe no Base44; preserva o conteúdo |
 | 2026-11-02 | **CV só com dados públicos**: nome, cidade/UF, e-mail, GitHub, LinkedIn, formação, idiomas, competências, projetos | ✅ usuário | Privacidade |
 | 2026-11-02 | **Deploy na Vercel** | ✅ usuário | O usuário já usa a Vercel na Biblioteca |
+| 2026-11-02 | Projeto Portfólio 2.0: imagem `projects/portifolioWeb/inicio.webp` (captura enviada pelo usuário), link "Ver online" para o próprio site; destaque "respeitam movimento reduzido" trocado por "Framer Motion e efeitos de luz que acompanham o cursor" | ✅ usuário + análise | O destaque antigo ficou falso após a decisão de animar para todos |
 | 2026-11-02 | Repositório público; deploy automático pela integração Git da Vercel | ✅ usuário | Pedido direto; o código vira vitrine e o link do card Portfólio 2.0 funciona |
 | 2026-11-02 | Branch `master` → `main` no primeiro push | ✅ análise | Padrão do repositório no GitHub |
 | 2026-11-02 | URL de produção `portifolioweb20.vercel.app` (nome gerado pela Vercel a partir da pasta) | 🔶 | Usuário não indicou domínio; pode trocar depois |

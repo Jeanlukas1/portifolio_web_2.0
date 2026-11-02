@@ -7,6 +7,7 @@ import landingBeneficios from '@/assets/images/projects/landing-page/beneficios.
 import landingDepoimentos from '@/assets/images/projects/landing-page/depoimentos.webp'
 import landingInicio from '@/assets/images/projects/landing-page/inicio.webp'
 import landingPorQueNos from '@/assets/images/projects/landing-page/por-que-nos.webp'
+import portfolioInicio from '@/assets/images/projects/portifolioWeb/inicio.webp'
 
 /*
  * Projetos exibidos no site (13). Textos do site antigo + READMEs dos repositórios.
@@ -92,11 +93,15 @@ export const projects: Project[] = [
     highlights: [
       'Conteúdo centralizado em arquivos de dados tipados',
       'Componentes reutilizáveis com shadcn/ui',
-      'Animações que respeitam a preferência por movimento reduzido',
+      'Animações com Framer Motion e efeitos de luz que acompanham o cursor',
       'Currículo em PDF gerado a partir dos mesmos dados do site',
     ],
     tech: ['react', 'typescript', 'vite', 'tailwind'],
+    images: [
+      { src: portfolioInicio, label: 'Início', alt: 'Tela inicial do portfólio: nome Jean Lukas, linha de digitação, botões Ver projetos e Baixar CV e o orbit de tecnologias em volta da foto' },
+    ],
     repoUrl: gh('portifolio_web_2.0'),
+    liveUrl: 'https://portifolioweb20.vercel.app',
   },
   {
     slug: 'reservas-laboratorios',
