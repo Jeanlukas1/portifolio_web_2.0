@@ -27,12 +27,12 @@ Scripts: `npm run dev` · `build` (`tsc -b && vite build`) · `lint` · `preview
 src/
   main.tsx  App.tsx  index.css            ✅
   components/ui/        ✅ shadcn (não editar à mão além do estilo)
-  components/layout/    Header, NavPill, MobileMenu, ScrollProgress, Footer
-  components/common/    SectionHeading ✅, Reveal ✅, TechIcon, SocialIcons, Marquee
+  components/layout/    ✅ Header, NavPill, MobileMenu, ScrollProgress, Footer, Spotlight
+  components/common/    SectionHeading ✅, Reveal ✅, BrandIcons ✅, SocialIcons ✅, TechIcon, Marquee
   sections/             hero/, About, Services, TechMarquee, technologies/, projects/, LinkedInCta, Contact
   data/                 ✅ profile, navigation, services, technologies, projects, education, experience (.ts)
   types/content.ts      ✅ tipos do conteúdo
-  hooks/                useActiveSection, useTypewriter, useCopyToClipboard
+  hooks/                useActiveSection ✅, useTypewriter, useCopyToClipboard
   lib/                  utils (cn) ✅, motion (variants) ✅, resume/generateResume
   assets/icons/ ✅ (20 SVGs Simple Icons, monocromáticos)  assets/images/profile.jpeg ✅  assets/images/projects/<slug>/ ✅
 public/favicon.png    ✅
@@ -47,6 +47,7 @@ public/favicon.png    ✅
 - Componentes em PascalCase; hooks `useX`; nomes de arquivos de assets sem espaços.
 - **Estilo:** cores sempre por token (`bg-card`, `text-muted-foreground`, `text-subtle`, `border-border`), nunca hex solto, exceto ajustes de hover. Utilities próprias: `container-page`, `text-eyebrow`, `card-surface`. Botões do modelo: `<Button variant="pill"|"pill-outline"|"icon-circle" size="cta"|"nav">`. Tags: `<Badge variant="mono"|"pill">`.
 - **Animação:** usar `Reveal` / as variants de `lib/motion.ts`; o `App` fica envolto em `MotionConfig reducedMotion="user"`.
+- **Âncoras:** hero `#topo`; seções `#sobre #servicos #tecnologias #projetos #contato` (ids de `data/navigation.ts`). Conteúdo em `main#conteudo` (alvo do skip-link), acima do Spotlight (`z-10`).
 
 ## Ambiente (máquina do usuário)
 - Windows 11; shells: PowerShell 5.1 e Git Bash.

@@ -2,8 +2,9 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Base pronta** (Etapas 0-3): scaffold, design system e dados reais em `src/data` + assets. `App.tsx` ainda é uma página de amostra temporária. Sem commits ainda.
-- **Próxima ação:** Etapa 4 (layout: header, nav, progresso, menu mobile, footer).
+- **Etapas 0-4 concluídas e commitadas** (branch `master`, sem push). Layout pronto (header, nav, progresso, menu mobile, footer, spotlight); as seções ainda são placeholders com os títulos reais.
+- **Próxima ação:** Etapa 5 (Hero: digitação, orbit, CTAs, scroll cue).
+- **Validação manual pendente** (headless não cobre): nav ativa ao rolar, linha de progresso, menu mobile a 360-390 px.
 
 ## Etapas
 | # | Etapa | Status | Registro |
@@ -12,7 +13,7 @@ _Atualizado em: 2026-11-02_
 | 1 | Scaffold (Vite, TS, Tailwind v4, shadcn, alias) | ✅ concluída | [01-scaffold](etapas/01-scaffold.md) |
 | 2 | Design system (tokens, fontes, componentes base) | ✅ concluída | [02-design-system](etapas/02-design-system.md) |
 | 3 | Dados + assets (`src/data`, cópia de imagens/ícones) | ✅ concluída | [03-dados-assets](etapas/03-dados-assets.md) |
-| 4 | Layout (header, nav, progresso, menu mobile, footer) | ⬜ | — |
+| 4 | Layout (header, nav, progresso, menu mobile, footer) | ✅ concluída | [04-layout](etapas/04-layout.md) |
 | 5 | Hero (digitação, orbit) | ⬜ | — |
 | 6 | Sobre + Serviços + Marquee | ⬜ | — |
 | 7 | Tecnologias + dialog | ⬜ | — |
@@ -26,8 +27,8 @@ _Atualizado em: 2026-11-02_
 Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [decisoes.md](decisoes.md) e [referencia-visual.md](referencia-visual.md).
 | Funcionalidade | Origem | Situação |
 |---|---|---|
-| Header fixo + nav com seção ativa + progresso de scroll | antigo + Base44 | pendente |
-| Menu mobile acessível | antigo | pendente |
+| Header fixo + nav com seção ativa + progresso de scroll | antigo + Base44 | ✅ implementado (validação manual pendente) |
+| Menu mobile acessível | antigo | ✅ implementado (validação manual pendente) |
 | Reveal ao rolar | antigo + Base44 | pendente |
 | Digitação de cargos no hero | antigo + Base44 | pendente |
 | Orbit de tecnologias com legenda | Base44 | pendente |
@@ -38,7 +39,7 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 | Card LinkedIn | Base44 | pendente |
 | Contato (mailto + copiar e-mail com toast) | antigo + Base44 | pendente |
 | Currículo PDF gerado (jsPDF) | antigo (PDF estático) → novo | pendente |
-| Ano dinâmico no rodapé, voltar ao topo, skip-link | antigo | pendente |
+| Ano dinâmico no rodapé, voltar ao topo, skip-link | antigo | ✅ implementado |
 
 ## Pendências (aguardando o usuário)
 Nenhuma no momento. Todas as respostas estão registradas em `decisoes.md` e `conteudo.md`.
@@ -50,5 +51,5 @@ Nenhuma no momento. Todas as respostas estão registradas em `decisoes.md` e `co
 - **Repo antigo** tem 1 alteração não commitada em `index.html` (não mexer).
 - **CV antigo publicado** contém dados pessoais sensíveis (fica no repo antigo; decisão sobre removê-lo é do usuário).
 - **Bundle JS** 394 kB (motion): otimizar na Etapa 11.
-- **Screenshots de validação:** Edge headless (ver `etapas/02-design-system.md` → Verificação).
+- **Screenshots de validação:** Edge headless (ver `etapas/02-design-system.md` → Verificação). Limites: largura mínima ~500 px e não aplica âncoras.
 - Riscos de implementação: ver `validacao.md`.

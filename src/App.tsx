@@ -1,71 +1,49 @@
 import { MotionConfig } from 'motion/react'
-import { ArrowDownRight, Download, Globe, Server, Wrench } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Reveal } from '@/components/common/Reveal'
 import { SectionHeading } from '@/components/common/SectionHeading'
+import { Footer } from '@/components/layout/Footer'
+import { Header } from '@/components/layout/Header'
+import { Spotlight } from '@/components/layout/Spotlight'
 
 /*
- * PÁGINA TEMPORÁRIA DA ETAPA 2 (design system).
- * Só serve para comparar tokens e componentes base com os screenshots do Base44.
- * Textos são de amostra, não conteúdo do site. Será substituída na Etapa 4.
+ * Estrutura da página. As seções marcadas como PLACEHOLDER serão substituídas
+ * pelos componentes de src/sections nas Etapas 5 a 9 (docs/estado.md).
  */
-const sampleCards = [
-  { icon: Globe, color: 'text-sky-400', title: 'Amostra de card', text: 'Texto secundário do card' },
-  { icon: Server, color: 'text-violet-400', title: 'Amostra de card', text: 'Texto secundário do card' },
-  { icon: Wrench, color: 'text-emerald-400', title: 'Amostra de card', text: 'Texto secundário do card' },
-]
+function SectionPlaceholder({ id, index, label, title }: { id: string; index: string; label: string; title: string }) {
+  return (
+    <section id={id} className="container-page flex min-h-[70vh] items-center border-t border-white/[0.06] py-24">
+      <SectionHeading index={index} label={label} title={title} />
+    </section>
+  )
+}
 
 function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <main className="py-24">
-        <section className="container-page grid gap-12 md:grid-cols-[1fr_1.6fr]">
-          <Reveal>
-            <SectionHeading index="01" label="Amostra" title="Título de seção" description="Subtítulo da seção em texto secundário." />
-          </Reveal>
-          <Reveal delay={0.1} className="space-y-6">
-            <h3 className="text-[2rem] font-semibold">Título grande</h3>
-            <p className="leading-relaxed text-muted-foreground">
-              Parágrafo de amostra para conferir a fonte, o tamanho, a altura de linha e a cor do texto secundário
-              em relação ao modelo de referência.
-            </p>
-            <p className="font-mono text-xs tracking-[0.3em] text-foreground/80 uppercase">Rótulo mono em caixa alta:</p>
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="pill">Pill de texto</Badge>
-              <Badge variant="pill">Outro pill</Badge>
-              <Badge variant="mono">Python</Badge>
-              <Badge variant="mono">FastAPI</Badge>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Button variant="pill" size="cta">
-                Botão sólido <ArrowDownRight />
-              </Button>
-              <Button variant="pill-outline" size="cta">
-                <Download /> Botão outline
-              </Button>
-              <Button variant="pill" size="nav">
-                Contato
-              </Button>
-            </div>
-          </Reveal>
-        </section>
+      <a
+        href="#conteudo"
+        className="fixed top-3 left-4 z-[60] -translate-y-20 rounded-lg bg-foreground px-4 py-2 text-sm text-background transition-transform focus:translate-y-0"
+      >
+        Ir para o conteúdo
+      </a>
+      <Spotlight />
+      <Header />
 
-        <section className="container-page mt-32">
-          <SectionHeading index="02" label="Amostra" title="Seção centralizada" description="Descrição centralizada." align="center" />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sampleCards.map(({ icon: Icon, color, title, text }, i) => (
-              <Reveal key={i} delay={i * 0.06} className="card-surface p-6 hover:border-white/15 hover:bg-[#191919]">
-                <span className="flex size-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03]">
-                  <Icon className={`size-5 ${color}`} />
-                </span>
-                <h3 className="mt-6 text-base font-medium tracking-tight">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{text}</p>
-              </Reveal>
-            ))}
-          </div>
+      <main id="conteudo" className="relative z-10">
+        {/* PLACEHOLDER: Hero (Etapa 5) */}
+        <section id="topo" className="container-page flex min-h-svh items-center pt-16">
+          <h1 className="text-6xl font-semibold sm:text-8xl">Jean Lukas</h1>
         </section>
+        {/* PLACEHOLDER: Etapas 6 a 9 */}
+        <SectionPlaceholder id="sobre" index="01" label="Sobre" title="Sobre mim" />
+        <SectionPlaceholder id="servicos" index="02" label="Serviços" title="Serviços" />
+        <SectionPlaceholder id="tecnologias" index="03" label="Tecnologias" title="Minhas tecnologias" />
+        <SectionPlaceholder id="projetos" index="04" label="Projetos" title="Trabalhos selecionados" />
+        <SectionPlaceholder id="contato" index="06" label="Contato" title="Vamos criar juntos?" />
       </main>
+
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </MotionConfig>
   )
 }
