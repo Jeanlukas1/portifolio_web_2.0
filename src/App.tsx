@@ -5,13 +5,14 @@ import { Header } from '@/components/layout/Header'
 import { Spotlight } from '@/components/layout/Spotlight'
 import { About } from '@/sections/About'
 import { Hero } from '@/sections/hero/Hero'
+import { Projects } from '@/sections/projects/Projects'
 import { Services } from '@/sections/Services'
 import { TechMarquee } from '@/sections/TechMarquee'
 import { Technologies } from '@/sections/technologies/Technologies'
 
 /*
  * Estrutura da página. As seções marcadas como PLACEHOLDER serão substituídas
- * pelos componentes de src/sections nas Etapas 8 e 9 (docs/estado.md).
+ * pelos componentes de src/sections na Etapa 9 (docs/estado.md).
  */
 function SectionPlaceholder({ id, index, label, title }: { id: string; index: string; label: string; title: string }) {
   return (
@@ -39,8 +40,8 @@ function App() {
         <Services />
         <TechMarquee />
         <Technologies />
-        {/* PLACEHOLDER: Etapas 8 e 9 */}
-        <SectionPlaceholder id="projetos" index="04" label="Projetos" title="Trabalhos selecionados" />
+        <Projects />
+        {/* PLACEHOLDER: Etapa 9 */}
         <SectionPlaceholder id="contato" index="06" label="Contato" title="Vamos criar juntos?" />
       </main>
 

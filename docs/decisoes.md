@@ -22,7 +22,7 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | Chip do orbit alterna sozinho (~2-3 s); hover pausa; clique seleciona | ✅ vídeo (tempo ≈) | Observado nos frames + texto "passe o mouse para pausar" |
 | 2026-11-02 | Copiar e-mail → toast (sonner) + ícone ✓ | 🔶 | Feedback não aparece no vídeo |
 | 2026-11-02 | Mobile: Sheet como menu; colunas empilhadas; orbit abaixo do texto | 🔶 | O vídeo não mostra mobile |
-| 2026-11-02 | Projetos sem print usam capa gerada (padrão escuro + ícone da tech) | 🔶 | Mantém o visual sem inventar imagens |
+| 2026-11-02 | Projetos sem print usam capa gerada (grade escura + brilho na cor da tech principal + ícones de até 3 techs) | 🔶 implementado | Mantém o visual sem inventar imagens; com 1 ícone só, as capas ficavam todas iguais (Python) |
 | 2026-11-02 | Documentação incremental em `docs/` (este sistema) | ✅ usuário | Economia de tokens entre sessões |
 | 2026-11-02 | Serviços: APIs REST com Python · Sistemas web com painel · Landing pages responsivas · Banco de dados e testes | ✅ usuário | Escolhidos entre opções com evidência nos projetos |
 | 2026-11-02 | Orbit: Python, FastAPI, Docker, PostgreSQL, React, TypeScript, MongoDB, Flask | ✅ usuário | Proposta aceita |
@@ -39,6 +39,9 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | Tecnologias: grade com as 20 de `technologies.ts` (sem filtro), 1/2/4 colunas; um único dialog controlado | ✅ análise | O modelo tem grade de 4 colunas e diz "clique para ver detalhes" |
 | 2026-11-02 | Grades longas: reveal **por card** (atraso pela coluna), não pela lista | ✅ teste | Com a lista inteira, 20% da grade nunca cabia na tela do mobile e os cards ficavam invisíveis |
 | 2026-11-02 | Dialogs controlados devolvem o foco ao botão que os abriu (`onCloseAutoFocus`) | ✅ teste | Sem `DialogTrigger`, o Radix não restaura o foco |
+| 2026-11-02 | Filtro de projetos: "Todos" (padrão) + categorias com projetos, cada pill com a contagem; anúncio `aria-live` do total | ✅ análise | Funcionalidade do site antigo no estilo da nav |
+| 2026-11-02 | Card de projeto: até 4 tags + "+N"; dialog mostra todas, galeria com miniaturas rotuladas e links "Ver online" / "Código no GitHub" | ✅ análise | Card limpo como no modelo; detalhes completos no dialog |
+| 2026-11-02 | Dialogs com conteúdo rolável usam `block` (não `grid`) no `DialogContent` | ✅ teste | No grid, a lista de miniaturas com overflow alargava a coluna e cortava o texto a 390 px |
 | 2026-11-02 | Overlay dos dialogs mais escuro (`bg-black/70` + `blur-sm`); textos do shadcn em pt-BR ("Fechar") | ✅ análise | Modelo mostra overlay escuro; interface em pt-BR |
 
 ## Em aberto
