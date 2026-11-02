@@ -20,7 +20,7 @@ _Atualizado em: 2026-11-02_
 | 8 | Projetos + filtro + dialog/galeria | ✅ concluída | [08-projetos](etapas/08-projetos.md) |
 | 9 | LinkedIn CTA + Contato | ✅ concluída | [09-linkedin-contato](etapas/09-linkedin-contato.md) |
 | 10 | Currículo PDF (jsPDF) | ✅ concluída | [10-curriculo-pdf](etapas/10-curriculo-pdf.md) |
-| 11 | Polimento (responsivo, a11y, perf, grep de mock) | ✅ concluída | [11-polimento](etapas/11-polimento.md) |
+| 11 | Polimento (responsivo, a11y, perf, grep de mock) | ✅ concluída | [11-polimento](etapas/11-polimento.md) · [11b-hover-spotlight](etapas/11b-hover-spotlight.md) |
 | 12 | Deploy (Vercel) | ⬜ | — |
 
 ## Funcionalidades (alvo × situação)
