@@ -3,35 +3,25 @@ import { toast } from 'sonner'
 
 /*
  * Ações do currículo para os botões "Baixar CV" (hero) e "Visualizar currículo" (Sobre).
- * O módulo do gerador (e o jsPDF) só é carregado no primeiro clique.
+ * Servem o PDF fornecido pelo usuário, sem alterações (public/curriculo-jean-lukas.pdf).
+ * Para atualizar o currículo, basta substituir esse arquivo.
  */
-const loadResume = () => import('@/lib/resume/generateResume')
-
-const onError = () =>
-  toast.error('Não foi possível gerar o currículo', { description: 'Tente novamente em instantes.' })
+const RESUME_URL = '/curriculo-jean-lukas.pdf'
+const RESUME_FILENAME = 'Curriculo-Jean-Lukas.pdf'
 
 export function useResume() {
-  const download = useCallback(async () => {
-    try {
-      const { downloadResume } = await loadResume()
-      await downloadResume()
-      toast.success('Currículo baixado')
-    } catch {
-      onError()
-    }
+  const download = useCallback(() => {
+    const link = document.createElement('a')
+    link.href = RESUME_URL
+    link.download = RESUME_FILENAME
+    document.body.append(link)
+    link.click()
+    link.remove()
+    toast.success('Currículo baixado')
   }, [])
 
-  const view = useCallback(async () => {
-    // Abre a aba já no clique, antes de qualquer await (ver viewResume).
-    const tab = window.open('', '_blank')
-    try {
-      const { viewResume } = await loadResume()
-      const result = await viewResume(tab)
-      if (result === 'download') toast.info('A nova aba foi bloqueada; o currículo foi baixado.')
-    } catch {
-      tab?.close()
-      onError()
-    }
+  const view = useCallback(() => {
+    window.open(RESUME_URL, '_blank', 'noopener')
   }, [])
 
   return { download, view }

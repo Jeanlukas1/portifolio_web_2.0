@@ -5,17 +5,19 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | Data | Decisão | Tipo | Motivo / evidência |
 |---|---|---|---|
 | 2026-11-02 | Nova app em `portifolio_web_2.0`; `../portifolio-web` intacto | ✅ usuário | Backup; o site antigo segue no ar |
-| 2026-11-02 | Stack: React, Vite, TS, Tailwind v4, shadcn/ui, motion, lucide-react, jsPDF | ✅ usuário | Requisito |
+| 2026-11-02 | Stack: React, Vite, TS, Tailwind v4, shadcn/ui, motion, lucide-react (jsPDF removido depois, ver abaixo) | ✅ usuário | Requisito |
 | 2026-11-02 | SPA de página única sem router; detalhes em modais | ✅ análise | O Base44 é uma página só |
 | 2026-11-02 | Conteúdo tipado em `src/data/*.ts` | ✅ usuário | Atualizar conteúdo sem tocar em componentes |
 | 2026-11-02 | LinkedIn descartado como fonte; o link permanece no site | ✅ usuário | Acesso bloqueado; o usuário pediu para esquecer |
 | 2026-11-02 | Seção Serviços mantida com o design Base44, só com serviços confirmados | ✅ usuário | Os serviços do mock são fictícios |
 | 2026-11-02 | **Filtro de projetos mantido**, como pills no estilo da nav | ✅ usuário | ~14 projetos; funcionalidade do site antigo |
 | 2026-11-02 | **Aprendizado vira bloco "Formação" dentro de Sobre** (e entra no CV) | ✅ usuário | Não existe no Base44; preserva o conteúdo |
-| 2026-11-02 | **CV só com dados públicos**: nome, cidade/UF, e-mail, GitHub, LinkedIn, formação, idiomas, competências, projetos | ✅ usuário | Privacidade |
+| 2026-11-02 | ~~**CV só com dados públicos**~~ (substituída: o usuário passou a fornecer o próprio PDF, ver abaixo): nome, cidade/UF, e-mail, GitHub, LinkedIn, formação, idiomas, competências, projetos | ✅ usuário | Privacidade |
 | 2026-11-02 | **Deploy na Vercel** | ✅ usuário | O usuário já usa a Vercel na Biblioteca |
 | 2026-11-02 | Cards de projeto com inclinação 3D (até 8°, mola, perspectiva 1000 px; volta ao plano ao sair) | ✅ usuário | Pedido direto |
 | 2026-11-02 | Botões magnéticos (força 0,35, máx. 14 px; ícones sociais 0,45/10 px; área de atração 12 px além da borda) em: Contato do header, CTAs do hero, Visualizar currículo, Conectar no LinkedIn, Enviar/Copiar e-mail, ícones sociais | ✅ usuário | Pedido direto. Botões vizinhos a 12 px dividem a área entre eles (o de cima no DOM atrai) |
+| 2026-11-02 | **Currículo = PDF fornecido pelo usuário, sem alterações** (`public/curriculo-jean-lukas.pdf`, de `JeanLukas_Curriculo_Atualizado.pdf`), **incluindo telefone, endereço/CEP, data de nascimento e estado civil**; gerador jsPDF e dependência removidos | ✅ usuário | Pedido direto ("quero que seja exatamente este currículo") após aviso de que os dados ficam públicos no site e no histórico do repo público |
+| 2026-11-02 | Experiência no site segue "Desenvolvedor Full-Stack · Prefeitura de Saquarema" (o PDF traz "Estagiário de TI / Agente Tecnológico · Programa Jovem Cidadão"); projetos Barbearia e Consulta Climática só no PDF | ✅ usuário | Respostas diretas |
 | 2026-11-02 | Projeto Portfólio 2.0: imagem `projects/portifolioWeb/inicio.webp` (captura enviada pelo usuário), link "Ver online" para o próprio site; destaque "respeitam movimento reduzido" trocado por "Framer Motion e efeitos de luz que acompanham o cursor" | ✅ usuário + análise | O destaque antigo ficou falso após a decisão de animar para todos |
 | 2026-11-02 | Repositório público; deploy automático pela integração Git da Vercel | ✅ usuário | Pedido direto; o código vira vitrine e o link do card Portfólio 2.0 funciona |
 | 2026-11-02 | Branch `master` → `main` no primeiro push | ✅ análise | Padrão do repositório no GitHub |
@@ -23,7 +25,7 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | Imagem de compartilhamento = captura real do hero (1200×630) | ✅ análise | Não inventa arte; mostra o site como é |
 | 2026-11-02 | Cache imutável para `/assets/*` via `vercel.json` | ✅ teste | A Vercel servia os assets com hash com `max-age=0` |
 | 2026-11-02 | Ícones de marca como SVGs locais; lucide só para UI | ✅ análise | lucide não tem logos de marca; evita uma dependência |
-| 2026-11-02 | jsPDF por `import()` dinâmico | ✅ análise | Bundle inicial menor |
+| 2026-11-02 | ~~jsPDF por `import()` dinâmico~~ (removido) | ✅ análise | Bundle inicial menor |
 | 2026-11-02 | "Visualizar currículo" abre o PDF em nova aba; "Baixar CV" baixa | 🔶 implementado | Comportamento não aparece no vídeo |
 | 2026-11-02 | Fontes Inter + JetBrains Mono | 🔶 | Inferidas dos frames (zero com ponto) |
 | 2026-11-02 | Spotlight de fundo seguindo o cursor: feixe azul-petróleo 520 px + núcleo claro, com rastro (lerp 0,12); em toque fica parado | ✅ usuário | Usuário pediu o "feixe de luz que acompanha o cursor"; a versão a 10% e desligada com reduced-motion não aparecia |

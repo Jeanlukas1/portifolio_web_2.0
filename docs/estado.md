@@ -3,7 +3,7 @@ _Atualizado em: 2026-11-02_
 
 ## Resumo
 - **Etapas 0-12 concluídas.** Site **no ar em https://portifolioweb20.vercel.app**. Código em `main` no GitHub (repo **público** desde 2026-11-02), **conectado à Vercel: cada push em `main` publica sozinho**. Lighthouse em produção: mobile 91/100/100/100, desktop 100/100/100/100.
-- **Próxima ação:** nenhuma etapa pendente. Aguardando o usuário: revisar o currículo PDF e decidir sobre as correções sugeridas nos textos que ele editou (hero, Sobre, destaque). Mudanças futuras: editar `src/data/*`, commit e push.
+- **Próxima ação:** nenhuma etapa pendente. Nada aguardando o usuário. Mudanças futuras: editar `src/data/*`, commit e push.
 - **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
@@ -23,6 +23,7 @@ _Atualizado em: 2026-11-02_
 | 11 | Polimento (responsivo, a11y, perf, grep de mock) | ✅ concluída | [11-polimento](etapas/11-polimento.md) · [11b-hover-spotlight](etapas/11b-hover-spotlight.md) |
 | 12 | Deploy (Vercel) | ✅ concluída | [12-deploy](etapas/12-deploy.md) |
 | 13 | Inclinação 3D + botões magnéticos (pedido extra) | ✅ concluída | [13-tilt-magnetico](etapas/13-tilt-magnetico.md) |
+| 14 | Currículo = PDF do usuário (pedido extra) | ✅ concluída | [14-curriculo-usuario](etapas/14-curriculo-usuario.md) |
 
 ## Funcionalidades (alvo × situação)
 Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [decisoes.md](decisoes.md) e [referencia-visual.md](referencia-visual.md).
@@ -39,13 +40,12 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 | Projetos + filtro em pills + dialog com galeria | antigo + Base44 | ✅ validado (1910/390 px, filtro, galeria, Esc, X, foco) |
 | Card LinkedIn | Base44 | ✅ validado (1910/390 px) |
 | Contato (mailto + copiar e-mail com toast) | antigo + Base44 | ✅ validado (área de transferência, toast, ✓ por 2 s) |
-| Currículo PDF gerado (jsPDF) | antigo (PDF estático) → novo | ✅ validado (download, nova aba, texto, privacidade) |
+| Currículo PDF | PDF do usuário (`public/`) | ✅ validado (download, nova aba) |
 | Inclinação 3D nos cards de projeto + botões magnéticos | pedido do usuário | ✅ validado (medido no navegador) |
 | Ano dinâmico no rodapé, voltar ao topo, skip-link | antigo | ✅ implementado |
 
 ## Pendências (aguardando o usuário)
 - **Vídeos do modelo** sumiram de `Videos\Captures`; se o usuário quiser detalhes finos de hover, pedir de novo.
-- **Revisar o currículo PDF** (conteúdo e visual). O resumo do Portfólio 2.0 já foi trocado para "Meu portfólio reconstruído…".
 - **Domínio:** usando `portifolioweb20.vercel.app`. Se trocar, atualizar `index.html` (og:url, og:image, twitter:image, canonical), `public/robots.txt` e `public/sitemap.xml`.
 
 ## Problemas conhecidos / riscos ativos
@@ -55,6 +55,6 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 - **Foto de perfil** é uma selfie com fundo claro; o modelo usa uma foto escura. Tratamento só via CSS; o usuário pode trocar a foto depois.
 - **Repo antigo** tem 1 alteração não commitada em `index.html` (não mexer).
 - **CV antigo publicado** contém dados pessoais sensíveis (fica no repo antigo; decisão sobre removê-lo é do usuário).
-- **Bundle JS** 560 kB / gzip 183 kB (motion + radix + sonner); jsPDF fora do chunk inicial. Aviso de chunk > 500 kB mantido de propósito (ver `decisoes.md`): otimizar na Etapa 11.
+- **Bundle JS** 560 kB / gzip 183 kB (motion + radix + sonner). Aviso de chunk > 500 kB mantido de propósito (ver `decisoes.md`): otimizar na Etapa 11.
 - **Screenshots de validação:** preferir o Playwright (ver `validacao.md`); alternativa: Edge headless (ver `etapas/02-design-system.md` → Verificação). Limites: largura mínima ~500 px, não aplica âncoras e **ativa reduced-motion por padrão** (usar `--force-prefers-no-reduced-motion` para ver animações).
 - Riscos de implementação: ver `validacao.md`.

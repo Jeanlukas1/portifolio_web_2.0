@@ -2,7 +2,7 @@
 Legenda: ✅ implementado · 📐 planejado (ainda não existe no código). Ao implementar, trocar 📐 por ✅.
 
 ## Versões principais ✅
-Vite 8 · React 19 · TypeScript 7 · Tailwind 4.3 · shadcn CLI 4 (preset `radix-nova`, base Radix) · motion 14 · lucide-react 1.x · jsPDF 4 · lint com **oxlint** (template atual do Vite; não há ESLint).
+Vite 8 · React 19 · TypeScript 7 · Tailwind 4.3 · shadcn CLI 4 (preset `radix-nova`, base Radix) · motion 14 · lucide-react 1.x · lint com **oxlint** (template atual do Vite; não há ESLint).
 Scripts: `npm run dev` · `build` (`tsc -b && vite build`) · `lint` · `preview`.
 
 ## Sistema
@@ -19,7 +19,7 @@ Scripts: `npm run dev` · `build` (`tsc -b && vite build`) · `lint` · `preview
 | shadcn/ui ✅ | `button`, `badge`, `dialog`, `sheet`, `sonner` instalados (+ `tooltip` se preciso) | `cn()` vem do pacote `cn` (oficial do shadcn, substitui clsx + tailwind-merge); `sonner` com tema fixo dark, sem next-themes |
 | motion (Framer Motion) | reveal, pill da nav (`layoutId`), orbit, `useScroll`, `AnimatePresence` | `MotionConfig reducedMotion="never"` (animações para todos) |
 | lucide-react | ícones de UI | logos de marca são SVGs locais em `src/assets/icons/`; a versão 1.x não tem GitHub/LinkedIn (usar SVG inline) |
-| jsPDF | currículo | `import()` dinâmico no clique |
+| Currículo | PDF do usuário em `public/curriculo-jean-lukas.pdf`, servido pelo `useResume` (baixar / nova aba) | jsPDF removido em 2026-11-02 |
 | Fontes ✅ self-hosted | Inter (`@fontsource-variable/inter`) + JetBrains Mono (`@fontsource/jetbrains-mono`, latin 400/500), importadas em `main.tsx`; `--font-sans`/`--font-mono` no CSS | 🔶 escolha inferida do vídeo; Google Fonts removido (bloqueava a renderização) |
 
 ## Estrutura de pastas (📐)
@@ -32,7 +32,7 @@ src/
   sections/             hero/ ✅ (Hero, TypingLine, TechOrbit, ScrollCue), About ✅, Services ✅, TechMarquee ✅, technologies/ ✅ (Technologies, TechCard, TechDialog), projects/ ✅ (Projects, ProjectFilter, ProjectCard, ProjectCover, ProjectDialog, ProjectGallery, techLabels), LinkedInCta ✅, Contact ✅
   data/                 ✅ profile, navigation, services, technologies, projects, education, experience, linkedin (.ts)
   types/content.ts      ✅ tipos do conteúdo
-  hooks/                useActiveSection ✅, useTypewriter ✅, useCopyToClipboard ✅, useResume ✅, useTilt ✅
+  hooks/                useActiveSection ✅, useTypewriter ✅, useCopyToClipboard ✅, useResume ✅ (serve o PDF de `public/`), useTilt ✅
   lib/                  utils (cn) ✅, motion (variants) ✅, resume/generateResume ✅ (carregado por import() dinâmico)
   assets/icons/ ✅ (20 SVGs Simple Icons, monocromáticos)  assets/images/profile.webp ✅ (480 px)  assets/images/projects/<slug>/*.webp ✅ (≤ 1600 px)
 public/favicon.png    ✅

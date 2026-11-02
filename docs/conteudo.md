@@ -1,6 +1,6 @@
 # Conteúdo real e fontes
 
-Fontes válidas: repo antigo `../portifolio-web` (site), GitHub `Jeanlukas1` (via `gh`), CV antigo (`../portifolio-web/src/assets/pdf/curriculo-jean-lukas.pdf`), confirmação direta do usuário. **LinkedIn não é fonte.**
+Fontes válidas: **currículo atualizado do usuário** (`public/curriculo-jean-lukas.pdf`, 2026-11-02), repo antigo `../portifolio-web` (site), GitHub `Jeanlukas1` (via `gh`), CV antigo (`../portifolio-web/src/assets/pdf/curriculo-jean-lukas.pdf`), confirmação direta do usuário. **LinkedIn não é fonte.**
 
 ## Perfil
 | Campo | Valor | Fonte | Status |

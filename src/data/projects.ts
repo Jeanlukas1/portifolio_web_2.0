@@ -89,12 +89,12 @@ export const projects: Project[] = [
     year: 2026,
     summary: 'Meu portfólio reconstruído com React, TypeScript e Tailwind CSS.',
     description:
-      'Migração do meu portfólio de HTML, CSS e JavaScript puro para React, TypeScript e Tailwind CSS, com conteúdo separado da interface, animações com Framer Motion e currículo em PDF gerado no próprio navegador com jsPDF.',
+      'Migração do meu portfólio de HTML, CSS e JavaScript puro para React, TypeScript e Tailwind CSS, com conteúdo separado da interface, animações com Framer Motion e currículo em PDF para baixar ou visualizar.',
     highlights: [
       'Conteúdo centralizado em arquivos de dados tipados',
       'Componentes reutilizáveis com shadcn/ui',
       'Animações com Framer Motion e efeitos de luz que acompanham o cursor',
-      'Currículo em PDF gerado a partir dos mesmos dados do site',
+      'Cards com inclinação 3D e botões magnéticos',
     ],
     tech: ['react', 'typescript', 'vite', 'tailwind'],
     images: [

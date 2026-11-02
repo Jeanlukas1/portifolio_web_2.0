@@ -1,6 +1,6 @@
 # portifolio_web_2.0
 
-Portfólio pessoal (Jean Lukas): migração de `../portifolio-web` (HTML/CSS/JS) para React + Vite + TS + Tailwind v4 + shadcn/ui + Framer Motion + lucide-react + jsPDF, com visual fiel ao modelo Base44.
+Portfólio pessoal (Jean Lukas): migração de `../portifolio-web` (HTML/CSS/JS) para React + Vite + TS + Tailwind v4 + shadcn/ui + Framer Motion + lucide-react, com visual fiel ao modelo Base44.
 
 ## Início de sessão (economia de contexto)
 1. Leia **só** `docs/estado.md` (status, próxima ação, pendências).
@@ -9,7 +9,7 @@ Portfólio pessoal (Jean Lukas): migração de `../portifolio-web` (HTML/CSS/JS)
 
 ## Regras
 - **Dados reais apenas.** Textos do Base44 são mockups. Fontes válidas: ver `docs/conteudo.md`. Nunca inventar experiência, datas, tecnologias ou números.
-- **Privacidade:** nunca publicar telefone, endereço/CEP, data de nascimento nem estado civil.
+- **Privacidade:** nunca publicar telefone, endereço/CEP, data de nascimento nem estado civil **no conteúdo do site** (`src/data`, textos, imagens). Única exceção, autorizada pelo usuário em 2026-11-02: o PDF do currículo fornecido por ele (`public/curriculo-jean-lukas.pdf`), servido sem alterações.
 - **Não alterar** `../portifolio-web` (backup, no ar). Não copiar `imgs/biblioteca/originais/` nem `*.exe`.
 - Conteúdo em `src/data/*.ts`; componentes só renderizam.
 - Interface e docs em pt-BR.
