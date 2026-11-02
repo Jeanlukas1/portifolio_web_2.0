@@ -2,6 +2,7 @@ import { Check, Copy, Mail } from 'lucide-react'
 import { toast } from 'sonner'
 import { Reveal } from '@/components/common/Reveal'
 import { Section } from '@/components/common/Section'
+import { Magnetic } from '@/components/common/Magnetic'
 import { Button } from '@/components/ui/button'
 import { profile } from '@/data/profile'
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
@@ -31,15 +32,19 @@ export function Contact() {
           {profile.contactText}
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button asChild variant="pill" size="cta">
-            <a href={`mailto:${email}`}>
-              <Mail /> Enviar e-mail
-            </a>
-          </Button>
-          <Button variant="pill-outline" size="cta" onClick={onCopy}>
-            {copied ? <Check className="text-emerald-400" /> : <Copy />}
-            {copied ? 'E-mail copiado' : 'Copiar e-mail'}
-          </Button>
+          <Magnetic>
+            <Button asChild variant="pill" size="cta">
+              <a href={`mailto:${email}`}>
+                <Mail /> Enviar e-mail
+              </a>
+            </Button>
+          </Magnetic>
+          <Magnetic>
+            <Button variant="pill-outline" size="cta" onClick={onCopy}>
+              {copied ? <Check className="text-emerald-400" /> : <Copy />}
+              {copied ? 'E-mail copiado' : 'Copiar e-mail'}
+            </Button>
+          </Magnetic>
         </div>
         <p className="mt-6 font-mono text-xs tracking-[0.1em] break-all text-subtle">{email}</p>
       </Reveal>

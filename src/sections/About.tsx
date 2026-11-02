@@ -3,6 +3,7 @@ import { Reveal } from '@/components/common/Reveal'
 import { Section } from '@/components/common/Section'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { Badge } from '@/components/ui/badge'
+import { Magnetic } from '@/components/common/Magnetic'
 import { Button } from '@/components/ui/button'
 import { education } from '@/data/education'
 import { experience } from '@/data/experience'
@@ -89,15 +90,17 @@ export function About({ onViewCv }: AboutProps) {
         )}
 
         <div className="flex items-center gap-5">
-          <Button
-            variant="pill"
-            size="cta"
-            className="rounded-xl px-6 text-xs tracking-[0.2em] uppercase"
-            onClick={onViewCv}
-            disabled={!onViewCv}
-          >
-            <FileText /> Visualizar currículo
-          </Button>
+          <Magnetic>
+            <Button
+              variant="pill"
+              size="cta"
+              className="rounded-xl px-6 text-xs tracking-[0.2em] uppercase"
+              onClick={onViewCv}
+              disabled={!onViewCv}
+            >
+              <FileText /> Visualizar currículo
+            </Button>
+          </Magnetic>
           <span aria-hidden="true" className="hidden h-px w-48 bg-white/15 sm:block" />
         </div>
       </Reveal>

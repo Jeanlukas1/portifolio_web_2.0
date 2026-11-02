@@ -1,3 +1,4 @@
+import { Magnetic } from '@/components/common/Magnetic'
 import { Button } from '@/components/ui/button'
 import { contactNavItem, navItems, unlistedSectionIds } from '@/data/navigation'
 import { profile } from '@/data/profile'
@@ -31,9 +32,11 @@ export function Header() {
         />
 
         <div className="flex items-center gap-2">
-          <Button asChild variant="pill" size="nav" className="hidden sm:inline-flex">
-            <a href={`#${contactNavItem.id}`}>{contactNavItem.label}</a>
-          </Button>
+          <Magnetic className="hidden sm:inline-flex">
+            <Button asChild variant="pill" size="nav">
+              <a href={`#${contactNavItem.id}`}>{contactNavItem.label}</a>
+            </Button>
+          </Magnetic>
           <MobileMenu items={navItems} contact={contactNavItem} active={active} />
         </div>
       </div>

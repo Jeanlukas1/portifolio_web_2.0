@@ -1,4 +1,5 @@
 import { Mail } from 'lucide-react'
+import { Magnetic } from '@/components/common/Magnetic'
 import { Button } from '@/components/ui/button'
 import { profile } from '@/data/profile'
 import { cn } from '@/lib/utils'
@@ -17,26 +18,32 @@ export function SocialIcons({ withEmail = false, size = 'icon-lg', className }: 
   return (
     <ul className={cn('flex items-center gap-3', className)}>
       <li>
-        <Button asChild variant="icon-circle" size={size}>
-          <a href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <GithubIcon />
-          </a>
-        </Button>
+        <Magnetic strength={0.45} max={10}>
+          <Button asChild variant="icon-circle" size={size}>
+            <a href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <GithubIcon />
+            </a>
+          </Button>
+        </Magnetic>
       </li>
       <li>
-        <Button asChild variant="icon-circle" size={size}>
-          <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <LinkedinIcon />
-          </a>
-        </Button>
+        <Magnetic strength={0.45} max={10}>
+          <Button asChild variant="icon-circle" size={size}>
+            <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <LinkedinIcon />
+            </a>
+          </Button>
+        </Magnetic>
       </li>
       {withEmail && (
         <li>
-          <Button asChild variant="icon-circle" size={size}>
-            <a href={`mailto:${email}`} aria-label="Enviar e-mail">
-              <Mail />
-            </a>
-          </Button>
+          <Magnetic strength={0.45} max={10}>
+            <Button asChild variant="icon-circle" size={size}>
+              <a href={`mailto:${email}`} aria-label="Enviar e-mail">
+                <Mail />
+              </a>
+            </Button>
+          </Magnetic>
         </li>
       )}
     </ul>

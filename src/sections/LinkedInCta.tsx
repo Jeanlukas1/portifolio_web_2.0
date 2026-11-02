@@ -2,6 +2,7 @@ import { ArrowUpRight, MapPin } from 'lucide-react'
 import { LinkedinIcon } from '@/components/common/BrandIcons'
 import { Reveal } from '@/components/common/Reveal'
 import { Section } from '@/components/common/Section'
+import { Magnetic } from '@/components/common/Magnetic'
 import { Button } from '@/components/ui/button'
 import { linkedinCta } from '@/data/linkedin'
 import { profile } from '@/data/profile'
@@ -27,12 +28,14 @@ export function LinkedInCta() {
               <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-[0.9375rem]">
                 {linkedinCta.text}
               </p>
-              <Button asChild variant="pill" size="cta" className="mt-8">
+              <Magnetic className="mt-8">
+              <Button asChild variant="pill" size="cta">
                 <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">
                   <LinkedinIcon className="size-4" /> {linkedinCta.ctaLabel} <ArrowUpRight />
                   <span className="sr-only">(abre em nova aba)</span>
                 </a>
               </Button>
+              </Magnetic>
             </div>
 
             <a

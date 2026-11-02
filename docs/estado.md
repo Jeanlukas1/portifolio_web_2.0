@@ -22,6 +22,7 @@ _Atualizado em: 2026-11-02_
 | 10 | Currículo PDF (jsPDF) | ✅ concluída | [10-curriculo-pdf](etapas/10-curriculo-pdf.md) |
 | 11 | Polimento (responsivo, a11y, perf, grep de mock) | ✅ concluída | [11-polimento](etapas/11-polimento.md) · [11b-hover-spotlight](etapas/11b-hover-spotlight.md) |
 | 12 | Deploy (Vercel) | ✅ concluída | [12-deploy](etapas/12-deploy.md) |
+| 13 | Inclinação 3D + botões magnéticos (pedido extra) | ✅ concluída | [13-tilt-magnetico](etapas/13-tilt-magnetico.md) |
 
 ## Funcionalidades (alvo × situação)
 Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [decisoes.md](decisoes.md) e [referencia-visual.md](referencia-visual.md).
@@ -39,6 +40,7 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 | Card LinkedIn | Base44 | ✅ validado (1910/390 px) |
 | Contato (mailto + copiar e-mail com toast) | antigo + Base44 | ✅ validado (área de transferência, toast, ✓ por 2 s) |
 | Currículo PDF gerado (jsPDF) | antigo (PDF estático) → novo | ✅ validado (download, nova aba, texto, privacidade) |
+| Inclinação 3D nos cards de projeto + botões magnéticos | pedido do usuário | ✅ validado (medido no navegador) |
 | Ano dinâmico no rodapé, voltar ao topo, skip-link | antigo | ✅ implementado |
 
 ## Pendências (aguardando o usuário)

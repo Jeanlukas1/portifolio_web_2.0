@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { ArrowDownRight, Download } from 'lucide-react'
 import { SocialIcons } from '@/components/common/SocialIcons'
+import { Magnetic } from '@/components/common/Magnetic'
 import { Button } from '@/components/ui/button'
 import { profile } from '@/data/profile'
 import { fadeUp, stagger } from '@/lib/motion'
@@ -47,14 +48,18 @@ export function Hero({ onDownloadCv }: HeroProps) {
             {profile.heroBio}
           </motion.p>
           <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
-            <Button asChild variant="pill" size="cta">
-              <a href="#projetos">
-                Ver projetos <ArrowDownRight />
-              </a>
-            </Button>
-            <Button variant="pill-outline" size="cta" onClick={onDownloadCv} disabled={!onDownloadCv}>
-              <Download /> Baixar CV
-            </Button>
+            <Magnetic>
+              <Button asChild variant="pill" size="cta">
+                <a href="#projetos">
+                  Ver projetos <ArrowDownRight />
+                </a>
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button variant="pill-outline" size="cta" onClick={onDownloadCv} disabled={!onDownloadCv}>
+                <Download /> Baixar CV
+              </Button>
+            </Magnetic>
           </motion.div>
           <motion.div variants={fadeUp} className="mt-9 flex items-center gap-4">
             <SocialIcons />

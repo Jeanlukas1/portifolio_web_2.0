@@ -1,5 +1,7 @@
 import { ArrowUpRight } from 'lucide-react'
+import { motion } from 'motion/react'
 import { CardGlow } from '@/components/common/CardGlow'
+import { useTilt } from '@/hooks/useTilt'
 import { trackGlow } from '@/lib/cardGlow'
 import { Badge } from '@/components/ui/badge'
 import type { Project } from '@/types/content'
@@ -14,14 +16,20 @@ type ProjectCardProps = {
   onSelect: (project: Project, trigger: HTMLButtonElement) => void
 }
 
-/** Card de projeto (screenshot 142549): capa, ano mono, título, resumo e tags. Hover: sobe e mostra "↗". */
+/** Card de projeto (screenshot 142549): capa, ano mono, título, resumo e tags. Hover: inclinação 3D seguindo o cursor, sobe e mostra "↗". */
 export function ProjectCard({ project, onSelect }: ProjectCardProps) {
   const extra = project.tech.length - MAX_TAGS
+  const tilt = useTilt()
   return (
-    <button
+    <motion.button
       type="button"
       onClick={(event) => onSelect(project, event.currentTarget)}
-      onPointerMove={trackGlow}
+      style={tilt.style}
+      onPointerMove={(event) => {
+        trackGlow(event)
+        tilt.onPointerMove(event)
+      }}
+      onPointerLeave={tilt.onPointerLeave}
       aria-haspopup="dialog"
       className="group card-surface relative isolate flex h-full w-full flex-col overflow-hidden text-left outline-none transition-[translate,background-color,border-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:border-white/20 hover:bg-[#191919] hover:shadow-[0_24px_60px_-20px_rgb(0_0_0/0.9),0_0_0_1px_rgb(94_234_212/0.06)] focus-visible:-translate-y-1.5 focus-visible:ring-2 focus-visible:ring-ring"
     >
@@ -59,6 +67,6 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           )}
         </span>
       </span>
-    </button>
+    </motion.button>
   )
 }
