@@ -2,8 +2,8 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Etapas 0-12 concluídas.** Site **no ar em https://portifolioweb20.vercel.app** (deploy pelo CLI). Código em `main` no GitHub (repo **privado**). Lighthouse em produção: mobile 91/100/100/100, desktop 100/100/100/100.
-- **Próxima ação:** aguardar o usuário: (1) liberar o repo para o app da Vercel no GitHub e rodar `npx vercel@latest git connect` (deploy automático a cada push); (2) decidir sobre o repo privado (link do card Portfólio 2.0); (3) revisar textos editados por ele (sugestões no histórico da conversa). Até o git connect, publicar com `npx vercel@latest --prod --yes`.
+- **Etapas 0-12 concluídas.** Site **no ar em https://portifolioweb20.vercel.app**. Código em `main` no GitHub (repo **público** desde 2026-11-02), **conectado à Vercel: cada push em `main` publica sozinho**. Lighthouse em produção: mobile 91/100/100/100, desktop 100/100/100/100.
+- **Próxima ação:** nenhuma etapa pendente. Aguardando o usuário: revisar o currículo PDF e decidir sobre as correções sugeridas nos textos que ele editou (hero, Sobre, destaque). Mudanças futuras: editar `src/data/*`, commit e push.
 - **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
@@ -44,9 +44,7 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 ## Pendências (aguardando o usuário)
 - **Vídeos do modelo** sumiram de `Videos\Captures`; se o usuário quiser detalhes finos de hover, pedir de novo.
 - **Revisar o currículo PDF** (conteúdo e visual). O resumo do Portfólio 2.0 já foi trocado para "Meu portfólio reconstruído…".
-- **Deploy automático:** o app da Vercel no GitHub não tem acesso ao repo privado (`vercel git connect` falhou). O usuário precisa liberar em GitHub → Settings → Applications → Vercel → Configure → adicionar `portifolio_web_2.0`.
 - **Domínio:** usando `portifolioweb20.vercel.app`. Se trocar, atualizar `index.html` (og:url, og:image, twitter:image, canonical), `public/robots.txt` e `public/sitemap.xml`.
-- **Repo privado:** o card "Portfólio 2.0" aponta para `github.com/Jeanlukas1/portifolio_web_2.0`, que dá 404 para visitantes enquanto o repo for privado. Decidir: tornar público ou remover o link.
 
 ## Problemas conhecidos / riscos ativos
 - **Testar animações com reduced-motion:** o Windows do usuário está com animações desligadas; no Playwright usar `reducedMotion: 'reduce'` para ver o site como ele vê. O site ignora essa preferência de propósito (`decisoes.md`).

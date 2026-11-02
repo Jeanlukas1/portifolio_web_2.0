@@ -1,5 +1,5 @@
 # Etapa 12: Deploy (Vercel)
-**Status:** concluída (deploy automático pendente do usuário)   **Data:** 2026-11-02
+**Status:** concluída   **Data:** 2026-11-02
 
 ## Objetivo
 Publicar o site na Vercel e finalizar o SEO com a URL definitiva.
@@ -31,6 +31,9 @@ Publicar o site na Vercel e finalizar o SEO com a URL definitiva.
 - Cabeçalho de cache pareceu não aplicar no 1º teste → era a resposta antiga em cache; conferido de novo (immutable).
 
 ## Pendências
-- Usuário: liberar o repo para o app da Vercel no GitHub e então `npx vercel@latest git connect`.
-- Usuário: repo privado × link "Código no GitHub" do card Portfólio 2.0 (404 para visitantes).
 - Usuário: revisar o currículo PDF e os textos que editou.
+
+## Atualização: repo público e deploy automático
+- Usuário conectou o repo à Vercel; `vercel git connect` confirma "already connected".
+- Antes de abrir o repo: varredura do histórico inteiro (arquivos e diffs) sem segredos nem dados privados.
+- `gh repo edit --visibility public` → GitHub responde 200 sem login; o link "Código no GitHub" do card Portfólio 2.0 passa a funcionar.

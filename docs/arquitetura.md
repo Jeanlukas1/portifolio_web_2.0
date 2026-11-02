@@ -56,7 +56,7 @@ public/favicon.png    ✅
 - Windows 11; shells: PowerShell 5.1 e Git Bash.
 - Node **v26.13.0**, npm **11.20.0** (winget `OpenJS.NodeJS.LTS`); ffmpeg **9.0.2** (winget `Gyan.FFmpeg`). Instalados em 2026-11-02.
 - Navegador do usuário: Opera GX (a extensão Claude in Chrome não está disponível).
-- Remote: `https://github.com/Jeanlukas1/portifolio_web_2.0.git` (privado), branch `main` (renomeada de `master` no primeiro push, 2026-11-02).
-- Vercel CLI via `npx vercel@latest` (sem instalação global), logado na conta do usuário. Projeto `portifolioweb20` (`.vercel/` ignorado no git). Deploy: `npx vercel@latest --prod --yes` (envia a árvore local, inclusive alterações não commitadas).
+- Remote: `https://github.com/Jeanlukas1/portifolio_web_2.0.git` (**público**), branch `main` (renomeada de `master` no primeiro push, 2026-11-02).
+- Vercel CLI via `npx vercel@latest` (sem instalação global), logado na conta do usuário. Projeto `portifolioweb20` (`.vercel/` ignorado no git). Deploy: **automático a cada push em `main`** (repo conectado à Vercel). Manual, se preciso: `npx vercel@latest --prod --yes` (envia a árvore local, inclusive alterações não commitadas).
 - Lint: `.oxlintrc.json` desliga `only-export-components` em `src/components/ui/**`.
 - Repo antigo: `../portifolio-web` (remote `Jeanlukas1/portifolio-web`, GitHub Pages).
