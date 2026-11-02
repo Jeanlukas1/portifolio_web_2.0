@@ -1,0 +1,26 @@
+# Validação e riscos
+
+## Checklist de validação (aplicar ao fim de cada etapa de UI e por completo na Etapa 11)
+| Área | Como validar | Critério |
+|---|---|---|
+| Build | `npm run build` (tsc -b + vite build), `npm run lint` (oxlint) | 0 erros, 0 warnings |
+| Console | dev e `vite preview` | sem erros/warnings; sem 404 de assets |
+| Fidelidade visual | screenshots a 1920×1080, seção a seção, lado a lado com as referências (`referencia-visual.md`) | espaçamento, tipografia, cores, raios e estados equivalentes |
+| Animações | comparar com as observações do vídeo; emular `prefers-reduced-motion` no DevTools | movimento fiel; com reduced-motion, sem animações contínuas |
+| Responsividade | 360, 390, 768, 1024, 1280, 1440, 1920 px | sem scroll horizontal; menu, grids e orbit adaptados |
+| Funcionalidades | roteiro manual da tabela "Funcionalidades" do `estado.md`, inclusive teclado (Tab, Esc em modais e menu) | todas funcionando |
+| Dados | revisar `src/data` contra `conteudo.md`; grep no `dist/` por termos do mock (São Paulo, Orbit Pay, GeoLink, Pulse Monitor, AWS, Next.js, Supabase, Firebase, "3 anos", "um dia útil") | 0 ocorrências |
+| Currículo PDF | gerar, abrir, conferir texto, acentos, links e quebras de página | só dados reais e públicos (`decisoes.md`) |
+| Assets | todos os assets copiados estão referenciados e carregam | nenhum órfão ou quebrado |
+| Desempenho | Lighthouse (mobile e desktop) | ≥ 90 em Performance, Acessibilidade e SEO; jsPDF fora do chunk inicial |
+
+## Riscos ativos e mitigação
+| Risco | Mitigação |
+|---|---|
+| Fontes e efeitos inferidos do vídeo (🔶 em `decisoes.md`) | Validar lado a lado; ajustar e marcar ✅ |
+| Conteúdo real insuficiente para seções do mock | A seção encolhe ou se adapta; nunca preencher com dados inventados |
+| Foto de perfil clara vs. modelo escuro | Tratamento CSS (recorte/vinheta), sem alterar o arquivo; o usuário pode trocar a foto |
+| Imagens pesadas (`catalogo.png` 1,1 MB) | WebP na Etapa 11 |
+| Tailwind v4 × shadcn | Seguir o fluxo oficial do shadcn para v4 |
+| PATH do Windows após instalar Node/ffmpeg | Ver "Problemas conhecidos" em `estado.md` |
+| Troca de URL do site (GitHub Pages → Vercel) | Decidir o destino do site antigo (pendência no `estado.md`) |
