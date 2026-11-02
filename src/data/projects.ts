@@ -184,15 +184,17 @@ export const projects: Project[] = [
   },
 ]
 
-/** Rótulos do filtro, na ordem de exibição. Só aparecem categorias que têm projetos. */
-const categoryLabels: Record<ProjectCategory, string> = {
+/**
+ * Rótulos do filtro, na ordem de exibição. Só aparecem categorias que têm projetos.
+ * "estudo" não tem pill (pedido do usuário): esses projetos aparecem só em "Todos".
+ */
+const categoryLabels: Partial<Record<ProjectCategory, string>> = {
   api: 'APIs',
   sistema: 'Sistemas',
   web: 'Web',
   cli: 'CLI',
-  estudo: 'Estudos',
 }
 
 export const projectFilters = (Object.keys(categoryLabels) as ProjectCategory[])
   .filter((c) => projects.some((p) => p.category === c))
-  .map((c) => ({ id: c, label: categoryLabels[c] }))
+  .map((c) => ({ id: c, label: categoryLabels[c] as string }))

@@ -39,6 +39,7 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | Tecnologias: grade com as 20 de `technologies.ts` (sem filtro), 1/2/4 colunas; um único dialog controlado | ✅ análise | O modelo tem grade de 4 colunas e diz "clique para ver detalhes" |
 | 2026-11-02 | Grades longas: reveal **por card** (atraso pela coluna), não pela lista | ✅ teste | Com a lista inteira, 20% da grade nunca cabia na tela do mobile e os cards ficavam invisíveis |
 | 2026-11-02 | Dialogs controlados devolvem o foco ao botão que os abriu (`onCloseAutoFocus`) | ✅ teste | Sem `DialogTrigger`, o Radix não restaura o foco |
+| 2026-11-02 | Sem pill "Estudos" no filtro; projetos de estudo aparecem só em "Todos" (pills: Todos, APIs, Sistemas, Web, CLI) | ✅ usuário | Pedido direto |
 | 2026-11-02 | Filtro de projetos: "Todos" (padrão) + categorias com projetos, cada pill com a contagem; anúncio `aria-live` do total | ✅ análise | Funcionalidade do site antigo no estilo da nav |
 | 2026-11-02 | Card de projeto: até 4 tags + "+N"; dialog mostra todas, galeria com miniaturas rotuladas e links "Ver online" / "Código no GitHub" | ✅ análise | Card limpo como no modelo; detalhes completos no dialog |
 | 2026-11-02 | Dialogs com conteúdo rolável usam `block` (não `grid`) no `DialogContent` | ✅ teste | No grid, a lista de miniaturas com overflow alargava a coluna e cortava o texto a 390 px |
