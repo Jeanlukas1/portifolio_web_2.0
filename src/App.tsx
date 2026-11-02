@@ -3,6 +3,7 @@ import { SectionHeading } from '@/components/common/SectionHeading'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { Spotlight } from '@/components/layout/Spotlight'
+import { Hero } from '@/sections/hero/Hero'
 
 /*
  * Estrutura da página. As seções marcadas como PLACEHOLDER serão substituídas
@@ -29,10 +30,7 @@ function App() {
       <Header />
 
       <main id="conteudo" className="relative z-10">
-        {/* PLACEHOLDER: Hero (Etapa 5) */}
-        <section id="topo" className="container-page flex min-h-svh items-center pt-16">
-          <h1 className="text-6xl font-semibold sm:text-8xl">Jean Lukas</h1>
-        </section>
+        <Hero />
         {/* PLACEHOLDER: Etapas 6 a 9 */}
         <SectionPlaceholder id="sobre" index="01" label="Sobre" title="Sobre mim" />
         <SectionPlaceholder id="servicos" index="02" label="Serviços" title="Serviços" />

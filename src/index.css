@@ -132,3 +132,10 @@
         }
     }
 }
+
+/* Cursor piscando da linha de digitação do hero */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
