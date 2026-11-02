@@ -31,6 +31,19 @@ export function ProjectDialog({ project, onOpenChange, returnFocusRef }: Project
       >
         {project && (
           <>
+            {/* X fixo: faixa sticky de altura 0 no topo da área rolável; o botão fica sobre a imagem. */}
+            <div className="sticky top-0 z-10 h-0">
+              <DialogClose asChild>
+                <Button
+                  variant="icon-circle"
+                  size="icon-lg"
+                  className="absolute top-3 right-3 border-white/15 bg-black/60 text-foreground backdrop-blur-sm"
+                >
+                  <XIcon />
+                  <span className="sr-only">Fechar</span>
+                </Button>
+              </DialogClose>
+            </div>
             {/* key: a galeria volta para a primeira imagem a cada projeto */}
             <ProjectGallery key={project.slug} project={project} />
             <div className="p-7 pt-5">
@@ -85,16 +98,6 @@ export function ProjectDialog({ project, onOpenChange, returnFocusRef }: Project
                 </div>
               )}
             </div>
-            <DialogClose asChild>
-              <Button
-                variant="icon-circle"
-                size="icon-lg"
-                className="absolute top-3 right-3 border-white/15 bg-black/60 text-foreground backdrop-blur-sm"
-              >
-                <XIcon />
-                <span className="sr-only">Fechar</span>
-              </Button>
-            </DialogClose>
           </>
         )}
       </DialogContent>

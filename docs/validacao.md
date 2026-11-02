@@ -26,7 +26,7 @@
 | Fontes e efeitos inferidos do vídeo (🔶 em `decisoes.md`) | Validar lado a lado; ajustar e marcar ✅ |
 | Conteúdo real insuficiente para seções do mock | A seção encolhe ou se adapta; nunca preencher com dados inventados |
 | Foto de perfil clara vs. modelo escuro | Tratamento CSS (recorte/vinheta), sem alterar o arquivo; o usuário pode trocar a foto |
-| Imagens pesadas (`catalogo.png` 1,1 MB) | WebP na Etapa 11 |
+| Imagens pesadas | ✅ resolvido na Etapa 11 (WebP, 2,3 MB → 436 kB) |
 | Tailwind v4 × shadcn | Seguir o fluxo oficial do shadcn para v4 |
 | PATH do Windows após instalar Node/ffmpeg | Ver "Problemas conhecidos" em `estado.md` |
 | Troca de URL do site (GitHub Pages → Vercel) | Decidir o destino do site antigo (pendência no `estado.md`) |

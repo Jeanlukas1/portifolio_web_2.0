@@ -1,12 +1,12 @@
 import type { Project, ProjectCategory } from '@/types/content'
-import bibliotecaCatalogacao from '@/assets/images/projects/biblioteca/catalogacao-fisica.png'
-import bibliotecaCatalogo from '@/assets/images/projects/biblioteca/catalogo.png'
-import bibliotecaRelatorios from '@/assets/images/projects/biblioteca/relatorios.png'
-import filmsCover from '@/assets/images/projects/films-crud/cover.png'
-import landingBeneficios from '@/assets/images/projects/landing-page/beneficios.png'
-import landingDepoimentos from '@/assets/images/projects/landing-page/depoimentos.png'
-import landingInicio from '@/assets/images/projects/landing-page/inicio.png'
-import landingPorQueNos from '@/assets/images/projects/landing-page/por-que-nos.png'
+import bibliotecaCatalogacao from '@/assets/images/projects/biblioteca/catalogacao-fisica.webp'
+import bibliotecaCatalogo from '@/assets/images/projects/biblioteca/catalogo.webp'
+import bibliotecaRelatorios from '@/assets/images/projects/biblioteca/relatorios.webp'
+import filmsCover from '@/assets/images/projects/films-crud/cover.webp'
+import landingBeneficios from '@/assets/images/projects/landing-page/beneficios.webp'
+import landingDepoimentos from '@/assets/images/projects/landing-page/depoimentos.webp'
+import landingInicio from '@/assets/images/projects/landing-page/inicio.webp'
+import landingPorQueNos from '@/assets/images/projects/landing-page/por-que-nos.webp'
 
 /*
  * Projetos exibidos no site (13). Textos do site antigo + READMEs dos repositórios.
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     featured: true,
     category: 'web',
     year: 2026,
-    summary: 'Este site: meu portfólio reconstruído com React, TypeScript e Tailwind CSS.',
+    summary: 'Meu portfólio reconstruído com React, TypeScript e Tailwind CSS.',
     description:
       'Migração do meu portfólio de HTML, CSS e JavaScript puro para React, TypeScript e Tailwind CSS, com conteúdo separado da interface, animações com Framer Motion e currículo em PDF gerado no próprio navegador com jsPDF.',
     highlights: [

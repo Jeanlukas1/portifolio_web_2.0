@@ -5,7 +5,7 @@ Arquivos de referência (fora do repo):
 - Vídeos: `C:\Users\lukas\Videos\Captures\Nexus Portfolio _ Base44 - Opera 2026-11-02 14-22-41.mp4` (48 MB, principal) e `... 14-21-51.mp4` (4 MB)
 
 ## Tokens observados (screenshots, aproximados)
-- Fundo ~`#0e0e0e`; superfícies/cards ~`#151515`; bordas `white/8%`; texto branco, secundário cinza ~`#a3a3a3`, terciário ~`#6b6b6b`.
+- Fundo ~`#0e0e0e`; superfícies/cards ~`#151515`; bordas `white/8%`; texto branco, secundário cinza ~`#a3a3a3`, terciário ~`#6b6b6b` (no nosso CSS, `--subtle` = `#858585` para atingir contraste AA; ver `decisoes.md`).
 - Sem cor de destaque. Exceções: ícones de marca coloridos, ícones dos serviços (azul, roxo, verde, amarelo, vermelho, ciano) e um brilho radial azul-petróleo sutil (atrás do orbit, no card LinkedIn e no canto superior esquerdo).
 - Raios: cards ~16 px, botões e nav em pill.
 - Tipografia: sans com tracking negativo nos títulos; mono em caixa alta com tracking largo para eyebrows (`01 — SOBRE`), chips, tags, anos e rodapé. Famílias: ver "Fontes" abaixo (🔶 hipótese).

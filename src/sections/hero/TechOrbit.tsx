@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import profilePhoto from '@/assets/images/profile.jpeg'
+import profilePhoto from '@/assets/images/profile.webp'
 import { profile } from '@/data/profile'
 import { orbitTechIds, techById } from '@/data/technologies'
 import { cn } from '@/lib/utils'
@@ -80,8 +80,8 @@ export function TechOrbit() {
             src={profilePhoto}
             alt={`Foto de ${profile.name}`}
             className="size-full object-cover object-[50%_30%] brightness-[0.92] contrast-[1.05]"
-            width={750}
-            height={824}
+            width={480}
+            height={528}
           />
           <div aria-hidden="true" className="absolute inset-0 rounded-full shadow-[inset_0_0_40px_rgb(0_0_0/0.55)]" />
         </div>
@@ -96,7 +96,7 @@ export function TechOrbit() {
               onClick={() => setActive(i)}
               aria-pressed={isActive}
               className={cn(
-                'absolute -translate-x-1/2 -translate-y-1/2 rounded-full border px-2.5 py-1 font-mono text-[0.5625rem] tracking-[0.2em] uppercase transition-colors duration-300 sm:px-3 sm:text-[0.625rem]',
+                'absolute inline-flex min-h-6 -translate-x-1/2 -translate-y-1/2 items-center rounded-full border px-2.5 py-1 font-mono text-[0.5625rem] tracking-[0.2em] uppercase transition-colors duration-300 sm:px-3 sm:text-[0.625rem]',
                 isActive
                   ? 'border-foreground bg-foreground text-background'
                   : 'border-white/12 bg-[#141414]/90 text-foreground/80 hover:border-white/30 hover:text-foreground',

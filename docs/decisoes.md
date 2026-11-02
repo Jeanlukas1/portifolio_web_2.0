@@ -48,6 +48,12 @@ Legenda: ✅ **fato/confirmado** (pelo usuário, pelo código ou pelas fontes) �
 | 2026-11-02 | CV gerado dos mesmos dados do site: Resumo, **Experiência** (já pública no site), Formação, Projetos em destaque (4, com stack e link) + lista dos outros, Competências por categoria, Boas práticas, Idiomas | ✅ análise | Lista do usuário (dados públicos) + experiência confirmada depois |
 | 2026-11-02 | CV com Helvetica padrão do jsPDF (sem embutir fonte) | ✅ teste | Acentos, "–" e "·" verificados por extração de texto; PDF de 17 kB |
 | 2026-11-02 | "Visualizar": a aba é aberta no clique, antes do `import()`; aba bloqueada → baixa o PDF e avisa | ✅ análise | Safari bloqueia `window.open` depois de um `await` |
+| 2026-11-02 | `--subtle` #6b6b6b → **#858585** | ✅ Lighthouse | 3,62:1 reprovava contraste AA (eyebrows, rodapé); agora ≈5,3:1. Leve desvio do modelo em favor da legibilidade |
+| 2026-11-02 | Fontes self-hosted via Fontsource (sem Google Fonts) | ✅ Lighthouse | O CSS do Google bloqueava a renderização; FCP mobile 3,0 s → 2,3 s |
+| 2026-11-02 | Imagens em WebP (projetos ≤ 1600 px, q80; foto 480 px); PNG/JPEG removidos do repo novo | ✅ análise | 2,3 MB → 436 kB; originais seguem no repo antigo e no histórico do git |
+| 2026-11-02 | X do dialog de projeto fixo (faixa `sticky` de altura 0) | ✅ teste | Antes sumia ao rolar o conteúdo |
+| 2026-11-02 | Resumo do Portfólio 2.0: "Meu portfólio reconstruído…" (sem "Este site:") | ✅ usuário | Ficava estranho no PDF |
+| 2026-11-02 | Mantidos: motion sem `LazyMotion` (~78 kB de JS não usado) e aviso de chunk > 500 kB | ✅ análise | Lighthouse já ≥ 94 no mobile; refatorar todos os componentes não compensa agora |
 | 2026-11-02 | Overlay dos dialogs mais escuro (`bg-black/70` + `blur-sm`); textos do shadcn em pt-BR ("Fechar") | ✅ análise | Modelo mostra overlay escuro; interface em pt-BR |
 
 ## Em aberto

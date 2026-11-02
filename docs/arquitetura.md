@@ -20,7 +20,7 @@ Scripts: `npm run dev` · `build` (`tsc -b && vite build`) · `lint` · `preview
 | motion (Framer Motion) | reveal, pill da nav (`layoutId`), orbit, `useScroll`, `AnimatePresence` | `MotionConfig reducedMotion="user"` |
 | lucide-react | ícones de UI | logos de marca são SVGs locais em `src/assets/icons/`; a versão 1.x não tem GitHub/LinkedIn (usar SVG inline) |
 | jsPDF | currículo | `import()` dinâmico no clique |
-| Fontes ✅ carregadas | Inter + JetBrains Mono (Google Fonts `<link>` no `index.html`; `--font-sans`/`--font-mono` no CSS) | 🔶 escolha inferida do vídeo |
+| Fontes ✅ self-hosted | Inter (`@fontsource-variable/inter`) + JetBrains Mono (`@fontsource/jetbrains-mono`, latin 400/500), importadas em `main.tsx`; `--font-sans`/`--font-mono` no CSS | 🔶 escolha inferida do vídeo; Google Fonts removido (bloqueava a renderização) |
 
 ## Estrutura de pastas (📐)
 ```
@@ -34,13 +34,14 @@ src/
   types/content.ts      ✅ tipos do conteúdo
   hooks/                useActiveSection ✅, useTypewriter ✅, useCopyToClipboard ✅, useResume ✅
   lib/                  utils (cn) ✅, motion (variants) ✅, resume/generateResume ✅ (carregado por import() dinâmico)
-  assets/icons/ ✅ (20 SVGs Simple Icons, monocromáticos)  assets/images/profile.jpeg ✅  assets/images/projects/<slug>/ ✅
+  assets/icons/ ✅ (20 SVGs Simple Icons, monocromáticos)  assets/images/profile.webp ✅ (480 px)  assets/images/projects/<slug>/*.webp ✅ (≤ 1600 px)
 public/favicon.png    ✅
 ```
 
 ## Convenções
 - Conteúdo só em `src/data/`; seções recebem os dados e renderizam. Tecnologias são referenciadas por **id** (`technologies.ts`) em projetos, orbit e marquee.
-- Adicionar um projeto = 1 objeto em `projects.ts` + imagens em `assets/images/projects/<slug>/`.
+- Adicionar um projeto = 1 objeto em `projects.ts` + imagens em `assets/images/projects/<slug>/`, **em WebP**: `ffmpeg -i in.png -vf "scale='min(1600,iw)':-2" -c:v libwebp -quality 80 -compression_level 6 out.webp`.
+- `public/robots.txt` libera tudo; sitemap/canonical/og:image dependem do domínio (Etapa 12).
 - Campos opcionais (ano, links, imagens) ficam vazios quando não há dado real; a UI se adapta.
 - Ícones de marca: SVG monocromático + `color` em `technologies.ts`, aplicados via máscara CSS. Novo ícone = baixar do Simple Icons (mesmo formato) para `src/assets/icons/`.
 - `Project.tech` aceita ids de `technologies.ts` ou rótulos livres.

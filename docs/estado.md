@@ -2,8 +2,8 @@
 _Atualizado em: 2026-11-02_
 
 ## Resumo
-- **Etapas 0-10 concluídas e commitadas** (branch `master`, sem push). Página completa + currículo PDF gerado no navegador.
-- **Próxima ação:** Etapa 11 (polimento: responsivo, a11y, performance/bundle, WebP, grep de mock, X fixo no dialog de projeto).
+- **Etapas 0-11 concluídas e commitadas** (branch `master`, sem push). Site completo e polido: Lighthouse mobile 94/100/100/100, desktop 100/100/100/100.
+- **Próxima ação:** Etapa 12 (deploy na Vercel). Precisa do usuário: conta/login na Vercel, se o repo vai para o GitHub (push) e o domínio/URL final (para og:image, canonical e sitemap).
 - **Validação manual pendente:** ciclo/hover/clique dos chips do orbit e fade do hero ao rolar (dá para automatizar com o Playwright se preciso).
 
 ## Etapas
@@ -20,7 +20,7 @@ _Atualizado em: 2026-11-02_
 | 8 | Projetos + filtro + dialog/galeria | ✅ concluída | [08-projetos](etapas/08-projetos.md) |
 | 9 | LinkedIn CTA + Contato | ✅ concluída | [09-linkedin-contato](etapas/09-linkedin-contato.md) |
 | 10 | Currículo PDF (jsPDF) | ✅ concluída | [10-curriculo-pdf](etapas/10-curriculo-pdf.md) |
-| 11 | Polimento (responsivo, a11y, perf, grep de mock) | ⬜ | — |
+| 11 | Polimento (responsivo, a11y, perf, grep de mock) | ✅ concluída | [11-polimento](etapas/11-polimento.md) |
 | 12 | Deploy (Vercel) | ⬜ | — |
 
 ## Funcionalidades (alvo × situação)
@@ -42,7 +42,8 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 | Ano dinâmico no rodapé, voltar ao topo, skip-link | antigo | ✅ implementado |
 
 ## Pendências (aguardando o usuário)
-- **Revisar o currículo PDF** (conteúdo e visual). Detalhe: o resumo do projeto Portfólio 2.0 diz "Este site: …", o que fica estranho no PDF; ajustar o texto em `projects.ts` se o usuário quiser.
+- **Revisar o currículo PDF** (conteúdo e visual). O resumo do Portfólio 2.0 já foi trocado para "Meu portfólio reconstruído…".
+- **Etapa 12:** acesso à Vercel, push para o GitHub e domínio final.
 
 ## Problemas conhecidos / riscos ativos
 - **Dev server:** testar com `timeout N npx vite ...` no Bash; não matar processos `node` genéricos.
@@ -50,6 +51,6 @@ Todas vêm do site antigo ou do modelo Base44. Implementação em detalhe: [deci
 - **Foto de perfil** é uma selfie com fundo claro; o modelo usa uma foto escura. Tratamento só via CSS; o usuário pode trocar a foto depois.
 - **Repo antigo** tem 1 alteração não commitada em `index.html` (não mexer).
 - **CV antigo publicado** contém dados pessoais sensíveis (fica no repo antigo; decisão sobre removê-lo é do usuário).
-- **Bundle JS** 558 kB / gzip 182 kB (motion + radix + sonner): otimizar na Etapa 11.
+- **Bundle JS** 560 kB / gzip 183 kB (motion + radix + sonner); jsPDF fora do chunk inicial. Aviso de chunk > 500 kB mantido de propósito (ver `decisoes.md`): otimizar na Etapa 11.
 - **Screenshots de validação:** preferir o Playwright (ver `validacao.md`); alternativa: Edge headless (ver `etapas/02-design-system.md` → Verificação). Limites: largura mínima ~500 px, não aplica âncoras e **ativa reduced-motion por padrão** (usar `--force-prefers-no-reduced-motion` para ver animações).
 - Riscos de implementação: ver `validacao.md`.
